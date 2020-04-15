@@ -95,11 +95,26 @@ namespace Viam.SalesForce.API
             });
 
             app.UseAuthentication(); //Indica que para ingresar a la API deberá usar un token, debe ponerse antes del Mvc
-            app.UseMvc();
-            app.UseSwagger(c =>
-            {
-                c.RouteTemplate = "SalesForceAPI/swagger/{documentName}/swagger.json";
+
+            app.UseSwagger();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //    c.RoutePrefix = string.Empty;
+            //});
+
+            app.UseSwaggerUI(s => {
+                s.RoutePrefix = "swagger";
+                s.SwaggerEndpoint("../swagger/v1/swagger.json", "V1 SalesForceAPI");
+                s.InjectStylesheet("../css/swagger.min.css");
             });
+
+
+            app.UseMvc();
+            //app.UseSwagger(c =>
+            //{
+            //    c.RouteTemplate = "ViamAPISalesForce/swagger/{documentName}/swagger.json";
+            //});
 
 
             //2da
@@ -110,16 +125,16 @@ namespace Viam.SalesForce.API
             //});
 
             //1ra
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/SalesForceAPI/swagger/v1/swagger.json", "V1 SalesForceAPI");
-                c.RoutePrefix = "SalesForceAPI/swagger";
-            });
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/ViamAPISalesForce/swagger/v1/swagger.json", "V1 SalesForceAPI");
+            //    c.RoutePrefix = "ViamAPISalesForce/swagger";
+            //});
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
             app.UseMvc();
 
         }
