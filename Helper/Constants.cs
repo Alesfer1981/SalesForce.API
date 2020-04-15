@@ -12,5 +12,11 @@ namespace Viam.SalesForce.API.Helper
 
         internal const string spGetSalesfLocations = "[crm].[spGetSalesfLocations]";
 
+        internal const string spGetSalesfTodayResumeData = "[crm].[spGetSalesfTodayResumeData]";
+
+        internal const string spSalesFMainBranchList = "[crm].[spSalesFMainBranchList]";
+
+        internal const string spSalesFChainList = "[crm].[spSalesFChainList]";
+
     }
 }

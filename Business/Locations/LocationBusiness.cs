@@ -28,5 +28,15 @@ namespace Viam.SalesForce.API.Business.Locations
         {
             return _envioReadRepository.getLocations(idlocation, synchronize);
         }
+
+        public ActionResult<List<ResumeDataToday>> getResumeDataToday(string idlocation)
+        {
+            return _envioReadRepository.getResumeDataToday(idlocation);
+        }
+
+        public ActionResult<List<MainBranchModel>> getMainBranchList(string filter)
+        {
+            return _envioReadRepository.getMainBranchList(filter);
+        }
     }
 }

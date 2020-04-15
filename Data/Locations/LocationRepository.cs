@@ -29,29 +29,6 @@ namespace Viam.SalesForce.API.Data.Locations
         }
 
         /// <summary>
-        /// Get resume data
-        /// </summary>
-        /// <param name="idLocation">Location code</param>
-        /// <param name="measure">Date update</param>
-        /// <returns></returns>
-        public ActionResult<List<ResumeData>> getResumeData(string idLocation, int measure)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                dbConnection.Open();
-
-                var p = new DynamicParameters();
-                p.Add("@IdLocation", idLocation);
-                p.Add("@Measure", measure);
-
-                var query = dbConnection.Query<ResumeData>(Constants.spGetSalesfResumeData,
-                                                           p,
-                                                           commandType: CommandType.StoredProcedure);
-                return query.AsList();
-            }
-        }
-
-        /// <summary>
         /// Get location data by identifier
         /// </summary>
         /// <param name="idLocation">Location indentifier</param>
@@ -74,6 +51,61 @@ namespace Viam.SalesForce.API.Data.Locations
 
             }
 
+        }
+
+        /// <summary>
+        /// Get resume data
+        /// </summary>
+        /// <param name="idLocation">Location code</param>
+        /// <param name="measure">Date update</param>
+        /// <returns></returns>
+        public ActionResult<List<ResumeData>> getResumeData(string idLocation, int measure)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@IdLocation", idLocation);
+                p.Add("@Measure", measure);
+
+                var query = dbConnection.Query<ResumeData>(Constants.spGetSalesfResumeData,
+                                                           p,
+                                                           commandType: CommandType.StoredProcedure);
+                return query.AsList();
+            }
+        }
+
+        public ActionResult<List<ResumeDataToday>> getResumeDataToday(string idLocation)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@IdLocation", idLocation);
+
+                var query = dbConnection.Query<ResumeDataToday>(Constants.spGetSalesfTodayResumeData,
+                                                                p,
+                                                                commandType: CommandType.StoredProcedure);
+                return query.AsList();
+            }
+        }
+
+        public ActionResult<List<MainBranchModel>> getMainBranchList(string filter)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@Filter", filter);
+
+                var query = dbConnection.Query<MainBranchModel>(Constants.spSalesFMainBranchList,
+                                                                p,
+                                                                commandType: CommandType.StoredProcedure);
+                return query.AsList();
+            }
         }
     }
 }

@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Business\Groups\" />
+    <Folder Include="Business\Products\" />
+    <Folder Include="Controllers\Groups\" />
+    <Folder Include="Controllers\Products\" />
+    <Folder Include="Data\Groups\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

@@ -32,28 +32,6 @@ namespace Viam.SalesForce.API.Controllers.Locations
         }
 
         /// <summary>
-        /// Get resume data method
-        /// </summary>
-        /// <param name="idLocation">Code of location</param>
-        /// <param name="measure">Values: 0 for all and 1 for only changes</param>
-        /// <returns>List of resume data</returns>
-        [HttpGet]
-        [Route("resume")]
-        public ActionResult<List<ResumeData>> getResumeData([FromQuery] string idLocation,
-                                                                        int measure)
-        {
-            try
-            {
-                return _locationBusiness.getResumeData(idLocation, measure);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-        }
-
-        /// <summary>
         /// Get a list of locations
         /// </summary>
         /// <param name="idLocation">Code of location</param>
@@ -75,6 +53,72 @@ namespace Viam.SalesForce.API.Controllers.Locations
             }
         }
 
+        /// <summary>
+        /// Report of resume data
+        /// </summary>
+        /// <param name="idLocation">Code of location</param>
+        /// <param name="measure">Values: 0 for all and 1 for only changes</param>
+        /// <returns>List of resume data</returns>
+        [HttpGet]
+        [Route("resume")]
+        public ActionResult<List<ResumeData>> getResumeData([FromQuery] string idLocation,
+                                                                        int measure)
+        {
+            try
+            {
+                return _locationBusiness.getResumeData(idLocation, measure);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Report of data at today date
+        /// </summary>
+        /// <param name="idLocation">Code of location</param>
+        /// <returns>List of resume data today</returns>
+        [HttpGet]
+        [Route("today")]
+        public ActionResult<List<ResumeDataToday>> getResumeDataToday([FromQuery] string idLocation)
+        {
+            try
+            {
+                return _locationBusiness.getResumeDataToday(idLocation);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// List of main branches
+        /// </summary>
+        /// <param name="filter">conditional</param>
+        /// <returns>List of branches</returns>
+        [HttpGet]
+        [Route("branch")]
+        public ActionResult<List<MainBranchModel>> getMainBranchList(string filter)
+        {
+            try
+            {
+                return _locationBusiness.getMainBranchList(filter);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Test conection
+        /// </summary>
+        /// <returns>True/False</returns>
         [HttpGet]
         [Route("echoping")]
         public IActionResult EchoPingAgents()
