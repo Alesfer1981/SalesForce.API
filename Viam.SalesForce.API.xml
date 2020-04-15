@@ -4,6 +4,13 @@
         <name>Viam.SalesForce.API</name>
     </assembly>
     <members>
+        <member name="M:Viam.SalesForce.API.Controllers.Chain.ChainController.getChainList(System.String)">
+            <summary>
+            List of chain codes
+            </summary>
+            <param name="filter">conditional</param>
+            <returns>A list of chain codes</returns>
+        </member>
         <member name="T:Viam.SalesForce.API.Controllers.Locations.LocationController">
             <summary>
             Controller to locations management
@@ -15,19 +22,47 @@
             </summary>
             <param name="configuration">configuration object</param>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.Int32)">
-            <summary>
-            Get resume data method
-            </summary>
-            <param name="idLocation">Code of location</param>
-            <param name="measure">Values: 0 for all and 1 for only changes</param>
-            <returns>List of resume data</returns>
-        </member>
         <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getLocations(System.String,System.String)">
             <summary>
             Get a list of locations
             </summary>
             <param name="idLocation">Code of location</param>
+            <param name="synchronize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.Int32)">
+            <summary>
+            Report of resume data
+            </summary>
+            <param name="idLocation">Code of location</param>
+            <param name="measure">Values: 0 for all and 1 for only changes</param>
+            <returns>List of resume data</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeDataToday(System.String)">
+            <summary>
+            Report of data at today date
+            </summary>
+            <param name="idLocation">Code of location</param>
+            <returns>List of resume data today</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getMainBranchList(System.String)">
+            <summary>
+            List of main branches
+            </summary>
+            <param name="filter">conditional</param>
+            <returns>List of branches</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.EchoPingAgents">
+            <summary>
+            Test conection
+            </summary>
+            <returns>True/False</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getLocations(System.String,System.String)">
+            <summary>
+            Get location data by identifier
+            </summary>
+            <param name="idLocation">Location indentifier</param>
             <param name="synchronize"></param>
             <returns></returns>
         </member>
@@ -37,14 +72,6 @@
             </summary>
             <param name="idLocation">Location code</param>
             <param name="measure">Date update</param>
-            <returns></returns>
-        </member>
-        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getLocations(System.String,System.String)">
-            <summary>
-            Get location data by identifier
-            </summary>
-            <param name="idLocation">Location indentifier</param>
-            <param name="synchronize"></param>
             <returns></returns>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.idLocation">
@@ -195,6 +222,11 @@
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.highWaterMark">
             <summary>
             Higt water marck
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.fxLevelMajorPayer">
+            <summary>
+            Forex level major payer
             </summary>
         </member>
     </members>
