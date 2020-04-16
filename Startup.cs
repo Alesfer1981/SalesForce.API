@@ -1,4 +1,5 @@
-﻿using System;
+﻿//con el log
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Viam.SalesForce.API.Model.Configuration;
 
@@ -20,11 +22,11 @@ namespace Viam.SalesForce.API
     {
         public IConfiguration Configuration { get; }
 
-
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            //loggerFactory.CreateLogger(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = builder.Build();
         }
 
@@ -61,27 +63,11 @@ namespace Viam.SalesForce.API
                 c.IncludeXmlComments(xmlPath);
             });
 
-            //var provider = services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
-            //3ra
-            //services.AddSwaggerGen(c =>
-            //{
-            //    //string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
-            //    //foreach (var description in provider.ApiVersionDescriptions)
-            //    //{
-            //    //    c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
-            //    //}
-            //    foreach (var description in provider.ApiVersionDescriptions)
-            //    {
-            //        c.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
-            //    }
-            //});
-            
-
             services.Configure<ConfigurationModel>(Configuration.GetSection("Settings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -94,34 +80,25 @@ namespace Viam.SalesForce.API
                 ForwardedHeaders = ForwardedHeaders.All
             });
 
+            loggerFactory.AddFile(Configuration.GetSection("Logging"));
+
             app.UseAuthentication(); //Indica que para ingresar a la API deberá usar un token, debe ponerse antes del Mvc
+
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                s.RoutePrefix = "swagger";
+                s.SwaggerEndpoint("../swagger/v1/swagger.json", "V1 SalesForceAPI");
+                s.InjectStylesheet("../css/swagger.min.css");
+            });
+
             app.UseMvc();
-            app.UseSwagger(c =>
-            {
-                c.RouteTemplate = "SalesForceAPI/swagger/{documentName}/swagger.json";
-            });
-
-
-            //2da
-            //app.UseSwaggerUI(c =>
-            //{
-            //    string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
-            //    c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "V1 SalesForceAPI");
-            //});
-
-            //1ra
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/SalesForceAPI/swagger/v1/swagger.json", "V1 SalesForceAPI");
-                c.RoutePrefix = "SalesForceAPI/swagger";
-            });
 
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
-            app.UseMvc();
-
+            //app.UseMvc();
         }
     }
 }
