@@ -92,20 +92,6 @@ namespace Viam.SalesForce.API.Data.Locations
             }
         }
 
-        public ActionResult<List<MainBranchModel>> getMainBranchList(string filter)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                dbConnection.Open();
-
-                var p = new DynamicParameters();
-                p.Add("@Filter", filter);
-
-                var query = dbConnection.Query<MainBranchModel>(Constants.spSalesFMainBranchList,
-                                                                p,
-                                                                commandType: CommandType.StoredProcedure);
-                return query.AsList();
-            }
-        }
+        
     }
 }

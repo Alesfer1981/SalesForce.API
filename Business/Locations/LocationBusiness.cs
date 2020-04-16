@@ -34,9 +34,6 @@ namespace Viam.SalesForce.API.Business.Locations
             return _envioReadRepository.getResumeDataToday(idlocation);
         }
 
-        public ActionResult<List<MainBranchModel>> getMainBranchList(string filter)
-        {
-            return _envioReadRepository.getMainBranchList(filter);
-        }
+        
     }
 }

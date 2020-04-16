@@ -4,6 +4,17 @@
         <name>Viam.SalesForce.API</name>
     </assembly>
     <members>
+        <member name="T:Viam.SalesForce.API.Controllers.Chain.ChainController">
+            <summary>
+            Controller to chain management
+            </summary>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Chain.ChainController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel})">
+            <summary>
+            constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
         <member name="M:Viam.SalesForce.API.Controllers.Chain.ChainController.getChainList(System.String)">
             <summary>
             List of chain codes
@@ -11,16 +22,36 @@
             <param name="filter">conditional</param>
             <returns>A list of chain codes</returns>
         </member>
+        <member name="T:Viam.SalesForce.API.Controllers.Groups.GroupController">
+            <summary>
+            Controller to group management
+            </summary>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Groups.GroupController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Groups.GroupController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration">configuration object</param>
+            <param name="logger">loggin object</param>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Groups.GroupController.getMainBranchList(System.String)">
+            <summary>
+            List of main branches
+            </summary>
+            <param name="idLocation">Location identifier</param>
+            <returns>List of branches</returns>
+        </member>
         <member name="T:Viam.SalesForce.API.Controllers.Locations.LocationController">
             <summary>
             Controller to locations management
             </summary>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel})">
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Locations.LocationController})">
             <summary>
             Constructor
             </summary>
             <param name="configuration">configuration object</param>
+            <param name="logger">loggin object</param>
         </member>
         <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getLocations(System.String,System.String)">
             <summary>
@@ -45,14 +76,7 @@
             <param name="idLocation">Code of location</param>
             <returns>List of resume data today</returns>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getMainBranchList(System.String)">
-            <summary>
-            List of main branches
-            </summary>
-            <param name="filter">conditional</param>
-            <returns>List of branches</returns>
-        </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.EchoPingAgents">
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.EchoPingAPI">
             <summary>
             Test conection
             </summary>
