@@ -97,14 +97,15 @@ namespace Viam.SalesForce.API
             app.UseAuthentication(); //Indica que para ingresar a la API deberá usar un token, debe ponerse antes del Mvc
 
             app.UseSwagger();
-
+            
             app.UseSwaggerUI(s => {
                 s.RoutePrefix = "swagger";
                 s.SwaggerEndpoint("../swagger/v1/swagger.json", "V1 SalesForceAPI");
                 s.InjectStylesheet("../css/swagger.min.css");
             });
 
-            app.UseMvc();
+            app.UseMvc();           
+
         }
     }
 }
