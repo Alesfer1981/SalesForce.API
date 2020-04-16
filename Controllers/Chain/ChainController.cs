@@ -10,15 +10,23 @@ using Viam.SalesForce.API.Model.Configuration;
 
 namespace Viam.SalesForce.API.Controllers.Chain
 {
-
+    /// <summary>
+    /// Controller to chain management
+    /// </summary>
     [Route("api/chain")]
     [ApiController]
     public class ChainController : Controller
     {
+        private readonly ILogger<GroupController> _logger;
+
         private readonly IOptions<ConfigurationModel> _configurations;
 
         private ChainBusiness _chainBusiness = null;
 
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public ChainController(IOptions<ConfigurationModel> configuration)
         {
             _configurations = configuration;
@@ -31,7 +39,7 @@ namespace Viam.SalesForce.API.Controllers.Chain
         /// <param name="filter">conditional</param>
         /// <returns>A list of chain codes</returns>
         [HttpGet]
-        ///[Route("chain")]
+        //[Route("chain")]
         public ActionResult<List<ChainModel>> getChainList([FromQuery] string filter)
         {
             try
@@ -40,10 +48,9 @@ namespace Viam.SalesForce.API.Controllers.Chain
             }
             catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError($"ChainController - metodo getChainList API chain, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
             }
         }
-
     }
 }

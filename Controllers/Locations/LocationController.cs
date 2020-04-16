@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Viam.SalesForce.API.Business.Locations;
+using Viam.SalesForce.API.Helper;
 using Viam.SalesForce.API.Model.Configuration;
 using Viam.SalesForce.API.Model.Locations;
 
@@ -17,6 +19,8 @@ namespace Viam.SalesForce.API.Controllers.Locations
     [ApiController]
     public class LocationController : Controller
     {
+        private readonly ILogger<LocationController> _logger;
+
         private readonly IOptions<ConfigurationModel> _configurations;
 
         private LocationBusiness _locationBusiness = null;
@@ -25,10 +29,12 @@ namespace Viam.SalesForce.API.Controllers.Locations
         /// Constructor
         /// </summary>
         /// <param name="configuration">configuration object</param>
-        public LocationController(IOptions<ConfigurationModel> configuration)
+        /// <param name="logger">loggin object</param>
+        public LocationController(IOptions<ConfigurationModel> configuration, ILogger<LocationController> logger)
         {
             _configurations = configuration;
             _locationBusiness = new LocationBusiness(_configurations.Value);
+            _logger = logger;
         }
 
         /// <summary>
@@ -44,12 +50,13 @@ namespace Viam.SalesForce.API.Controllers.Locations
         {
             try
             {
+                //throw new Exception("force exception");
                 return _locationBusiness.getLocations(idLocation, synchronize);
             }
             catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError($"LocationController - metodo getLocations API location, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
             }
         }
 
@@ -70,8 +77,8 @@ namespace Viam.SalesForce.API.Controllers.Locations
             }
             catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError($"LocationController - metodo getResumeData API resume, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
             }
         }
 
@@ -90,28 +97,8 @@ namespace Viam.SalesForce.API.Controllers.Locations
             }
             catch (Exception ex)
             {
-
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// List of main branches
-        /// </summary>
-        /// <param name="filter">conditional</param>
-        /// <returns>List of branches</returns>
-        [HttpGet]
-        [Route("branch")]
-        public ActionResult<List<MainBranchModel>> getMainBranchList(string filter)
-        {
-            try
-            {
-                return _locationBusiness.getMainBranchList(filter);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
+                _logger.LogError($"LocationController - metodo getResumeDataToday API today, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
             }
         }
 
@@ -121,7 +108,7 @@ namespace Viam.SalesForce.API.Controllers.Locations
         /// <returns>True/False</returns>
         [HttpGet]
         [Route("echoping")]
-        public IActionResult EchoPingAgents()
+        public IActionResult EchoPingAPI()
         {
             return Ok(true);
         }
