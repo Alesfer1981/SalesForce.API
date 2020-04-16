@@ -10,11 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Business\Groups\" />
     <Folder Include="Business\Products\" />
-    <Folder Include="Controllers\Groups\" />
     <Folder Include="Controllers\Products\" />
-    <Folder Include="Data\Groups\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -23,6 +20,8 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="NLog" Version="4.7.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.3.1" />
   </ItemGroup>
