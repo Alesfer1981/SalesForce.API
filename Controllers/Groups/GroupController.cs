@@ -59,9 +59,5 @@ namespace Viam.SalesForce.API.Controllers.Groups
             }
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }
