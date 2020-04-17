@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Viam.SalesForce.API.Business.Chain;
 using Viam.SalesForce.API.Model.Chain;
@@ -17,7 +18,7 @@ namespace Viam.SalesForce.API.Controllers.Chain
     [ApiController]
     public class ChainController : Controller
     {
-        private readonly ILogger<GroupController> _logger;
+        private readonly ILogger<ChainController> _logger;
 
         private readonly IOptions<ConfigurationModel> _configurations;
 
