@@ -19,10 +19,8 @@ namespace Viam.SalesForce.API.Controllers.Chain
     [ApiController]
     public class ChainController : Controller
     {
-        private readonly ILogger<GroupController> _logger;
-
+        private readonly ILogger<ChainController> _logger;
         private readonly IOptions<ConfigurationModel> _configurations;
-
         private ChainBusiness _chainBusiness = null;
 
         /// <summary>
