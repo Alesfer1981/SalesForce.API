@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Viam.SalesForce.API.Model.Locations
 {
+    /// <summary>
+    /// Resume object to store data
+    /// </summary>
     public class ResumeData
     {
         /// <summary>
@@ -18,7 +21,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Dso value
+        /// Days Oustanding. Time it takes for an agency to pay the balance at the current sales rate
         /// </summary>
         public string dso { get; set; }
         //private string DSO
@@ -78,7 +81,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Mean days inactive
+        /// Mean days inactive value
         /// </summary>
         public string meanDaysInactive { get; set; }
         private string MEAN_DAYS_INACTIVE
@@ -88,7 +91,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Date from viacheck activated product
+        /// Date to indicate since when is Viacheck app was installed on this location
         /// </summary>
         public string dateIsViacheck { get; set; }
         private string DATE_IS_VIACHECK
@@ -98,7 +101,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Month to day value for viacheck transactions
+        /// Month to date transaction count for Viacheck app
         /// </summary>
         public string mtdCountViacheck { get; set; }
         private string MTD_COUNT_VIACHECK
@@ -108,7 +111,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Average value for Viacheck transactions
+        /// Average transactions for Viacheck app
         /// </summary>
         public string avgCountViacheck { get; set; }
         private string AVG_COUNT_VIACHECK
@@ -118,7 +121,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today number of Viacheck transactions
+        /// Number of transactions today for Viacheck app
         /// </summary>
         public string todayCountViacheck { get; set; }
         private string TODAY_COUNT_VIACHECK
@@ -128,7 +131,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today value of viacheck transactions
+        /// Quantity of transactions today for Viacheck app
         /// </summary>
         public string todayAmountViacheck { get; set; }
         private string TODAY_AMOUNT_VIACHECK
@@ -153,7 +156,7 @@ namespace Viam.SalesForce.API.Model.Locations
         //}
 
         /// <summary>
-        /// Month to day value for Viasafe transactions
+        /// Month to date transaction count for Viasafe app
         /// </summary>
         public string mtdCountViasafe { get; set; }
         private string MTD_COUNT_VIASAFE
@@ -163,7 +166,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Average value for Viasafe transactions
+        /// Average transactions for Viasafe app
         /// </summary>
         public string avgCountViasafe { get; set; }
         private string AVG_COUNT_VIASAFE
@@ -216,7 +219,7 @@ namespace Viam.SalesForce.API.Model.Locations
 
 
         /// <summary>
-        /// Month to day value for topups transactions
+        /// Month to date transaction count for Topups app
         /// </summary>
         public string mtdCountTopups { get; set; }
         private string MTD_COUNT_TOPUPS
@@ -226,7 +229,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Average value for topups transactions
+        /// Average transactions for Topups app
         /// </summary>
         public string avgCountTopups { get; set; }
         private string AVG_COUNT_TOPUPS
@@ -236,7 +239,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today number of topups transactions
+        /// Number of transactions today for Topups app
         /// </summary>
         public string todayCountTopups { get; set; }
         private string TODAY_COUNT_TOPUPS
@@ -246,7 +249,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today value of topups transactions
+        /// Quantity of transactions today for Topups app
         /// </summary>
         public string todayAmountTopups { get; set; }
         private string TODAY_AMOUNT_TOPUPS
@@ -278,7 +281,7 @@ namespace Viam.SalesForce.API.Model.Locations
         //}
 
         /// <summary>
-        /// Month to day value for Money Orders transactions
+        /// Month to date transaction count for Money Orders app
         /// </summary>
         public string mtdCountMoneyOrders { get; set; }
         private string MTD_COUNT_MONEYORDERS
@@ -288,7 +291,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Average value for Money Orders transactions
+        /// Average transactions for Money Orders app
         /// </summary>
         public string avgCountMoneyOrders { get; set; }
         private string AVG_COUNT_MONEYORDERS
@@ -298,7 +301,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today number of Money Orders transactions
+        /// Number of transactions today for Money Orders app
         /// </summary>
         public string todayCountMoneyOrders { get; set; }
         private string TODAY_COUNT_MONEYORDERS
@@ -308,7 +311,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today value of Money Orders transactions
+        /// Quantity of transactions today for Money Orders app
         /// </summary>
         public string todayAmountMoneyOrders { get; set; }
         private string TODAY_AMOUNT_MONEYORDERS
@@ -325,7 +328,7 @@ namespace Viam.SalesForce.API.Model.Locations
         //}
 
         /// <summary>
-        /// Average value for Money Transfer transactions
+        /// Average transactions for Money transfer app
         /// </summary>
         public string avgCountMoneyTransfer { get; set; }
         private string AVG_COUNT_MONEYTRANSFER
@@ -335,7 +338,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today number of Money transfer transactions
+        /// Number of transactions today for Money transfer app
         /// </summary>
         public string todayCountMoneyTransfer { get; set; }
         private string TODAY_COUNT_MONEYTRANSFER
@@ -345,7 +348,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Today value of Money transfer transactions
+        /// Quantity of transactions today for Money transfer app
         /// </summary>
         public string todayAmountMoneyTransfer { get; set; }
         private string TODAY_AMOUNT_MONEYTRANSFER
@@ -355,7 +358,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// fx level major payer
+        /// Forex trade level major payer
         /// </summary>
         public string fxLevelMajorPayer { get; set; }
         private string FX_LEVEL_MAJOR_PAYER
@@ -365,7 +368,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Higt water marck
+        /// Hight water mark of location
         /// </summary>
         public string highWaterMark { get; set; }
         private string HIGH_WATER_MARK
@@ -373,6 +376,5 @@ namespace Viam.SalesForce.API.Model.Locations
             get { return highWaterMark; }
             set { highWaterMark = value.Trim(); }
         }
-
     }
 }

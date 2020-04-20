@@ -5,8 +5,14 @@ using System.Threading.Tasks;
 
 namespace Viam.SalesForce.API.Model.Locations
 {
+    /// <summary>
+    /// Resume today object to store data
+    /// </summary>
     public class ResumeDataToday
     {
+        /// <summary>
+        /// Location code
+        /// </summary>
         public string idLocation { get; set; }
         private string ID_LOCATION
         {
@@ -14,6 +20,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { idLocation = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Viacheck app
+        /// </summary>
         public string todayCountViacheck { get; set; }
         private string TODAY_COUNT_VIACHECK
         {
@@ -21,6 +30,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Viacheck app
+        /// </summary>
         public string todayAmountViacheck { get; set; }
         private string TODAY_AMOUNT_VIACHECK
         {
@@ -28,6 +40,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Viasafe app
+        /// </summary>
         public string todayCountViasafe { get; set; }
         private string TODAY_COUNT_VIASAFE
         {
@@ -35,6 +50,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for ViaSafe app
+        /// </summary>
         public string todayAmountViasafe { get; set; }
         private string TODAY_AMOUNT_VIASAFE
         {
@@ -42,6 +60,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Topups app
+        /// </summary>
         public string todayCountViaTopups { get; set; }
         private string TODAY_COUNT_VIATOPUPS
         {
@@ -49,6 +70,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViaTopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Topups app
+        /// </summary>
         public string todayAmountViaTopups { get; set; }
         private string TODAY_AMOUNT_VIATOPUPS
         {
@@ -56,6 +80,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViaTopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for BillPayment app
+        /// </summary>
         public string todayCountViaBillpay { get; set; }
         private string TODAY_COUNT_VIABILLPAY
         {
@@ -63,6 +90,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViaBillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Billpayment app
+        /// </summary>
         public string todayAmountViaBillpay { get; set; }
         private string TODAY_AMOUNT_VIABILLPAY
         {
@@ -70,7 +100,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViaBillpay = value.Trim(); }
         }
 
-
+        /// <summary>
+        /// Number of transactions today for Money Orders app
+        /// </summary>
         public string todayCountMoneyOrders { get; set; }
         private string TODAY_COUNT_MONEYORDERS
         {
@@ -78,7 +110,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountMoneyOrders = value.Trim(); }
         }
 
-
+        /// <summary>
+        /// Quantity of transactions today for Money Orders app
+        /// </summary>
         public string todayAmountMoneyorders { get; set; }
         private string TODAY_AMOUNT_MONEYORDERS
         {
@@ -86,7 +120,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountMoneyorders = value.Trim(); }
         }
 
-
+        /// <summary>
+        /// Number of transactions today for Money transfer app
+        /// </summary>
         public string todayCountMoneytransfer { get; set; }
         private string TODAY_COUNT_MONEYTRANSFER
         {
@@ -94,6 +130,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountMoneytransfer = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Money transfer app
+        /// </summary>
         public string todayAmountMoneytransfer { get; set; }
         private string TODAY_AMOUNT_MONEYTRANSFER
         {

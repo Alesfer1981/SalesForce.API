@@ -5,8 +5,14 @@ using System.Threading.Tasks;
 
 namespace Viam.SalesForce.API.Model.Locations
 {
+    /// <summary>
+    /// Location object to store data
+    /// </summary>
     public class LocationModel
     {
+        /// <summary>
+        /// Location code
+        /// </summary>
         public string id { get; set; }
         //private string ID_LOCATION
         //{
@@ -14,6 +20,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { idLocation = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Code of the company group
+        /// </summary>
         public string idGroupCompany { get; set; }
         private string ID_GROUP_COMPANY
         {
@@ -21,6 +30,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { idGroupCompany = value.Trim(); }
         }
 
+        /// <summary>
+        /// List of branches, separated by comma
+        /// </summary>
         public string branches { get; set; }
         //private string BRANCHES
         //{
@@ -28,6 +40,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { branches = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Type of location (New or Existing)
+        /// </summary>
         public string type { get; set; }
         //private string TYPE
         //{
@@ -35,6 +50,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { type = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Creation date of location
+        /// </summary>
         public string creationDate { get; set; }
         private string CREATION_DATE
         {
@@ -42,6 +60,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { creationDate = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of days open
+        /// </summary>
         public string daysOpen { get; set; }
         private string DAYS_OPEN
         {
@@ -49,6 +70,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { daysOpen = value.Trim(); }
         }
 
+        /// <summary>
+        /// Company Name
+        /// </summary>
         public string companyName { get; set; }
         private string COMPANY_NAME
         {
@@ -56,6 +80,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { companyName = value.Trim(); }
         }
 
+        /// <summary>
+        /// Group of company
+        /// </summary>
         public string groupCompany { get; set; }
         private string GROUP_COMPANY
         {
@@ -63,6 +90,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { groupCompany = value.Trim(); }
         }
 
+        /// <summary>
+        /// Name of location
+        /// </summary>
         public string name { get; set; }
         //private string NAME
         //{
@@ -70,6 +100,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { name = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Status of location (A:Active I:Inactive)
+        /// </summary>
         public string status { get; set; }
         //private string STATUS
         //{
@@ -77,6 +110,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { status = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Status of location (Open-Active, Open-Inactive, Closed)
+        /// </summary>
         public string extendedStatus { get; set; }
         private string EXTENDED_STATUS
         {
@@ -84,6 +120,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { extendedStatus = value.Trim(); }
         }
 
+        /// <summary>
+        /// Location City
+        /// </summary>
         public string city { get; set; }
         //private string CITY
         //{
@@ -91,6 +130,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { city = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location State
+        /// </summary>
         public string state { get; set; }
         //private string STATE
         //{
@@ -98,6 +140,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { state = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location Zone
+        /// </summary>
         public string zone { get; set; }
         //private string ZONE
         //{
@@ -105,6 +150,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { zone = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location Sales Representative
+        /// </summary>
         public string salesRepresentative { get; set; }
         private string SALES_REPRESENTATIVE
         {
@@ -112,6 +160,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { salesRepresentative = value.Trim(); }
         }
 
+        /// <summary>
+        /// Location Sales Representative identifier
+        /// </summary>
         public string idSalesRepresentative { get; set; }
         private string ID_SALES_REPRESENTATIVE
         {
@@ -119,6 +170,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { idSalesRepresentative = value.Trim(); }
         }
 
+        /// <summary>
+        /// Manager of location
+        /// </summary>
         public string manager { get; set; }
         //private string MANAGER
         //{
@@ -126,6 +180,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { manager = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location Address
+        /// </summary>
         public string address { get; set; }
         //private string ADDRESS
         //{
@@ -133,6 +190,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { address = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location Zip code
+        /// </summary>
         public string zip { get; set; }
         //private string ZIP
         //{
@@ -140,6 +200,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { zip = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location Phone number 1
+        /// </summary>
         public string phone1 { get; set; }
         //private string PHONE1
         //{
@@ -147,6 +210,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { phone1 = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location phone number 2
+        /// </summary>
         public string phone2 { get; set; }
         //private string PHONE2
         //{
@@ -154,6 +220,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { phone2 = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Location Fax number
+        /// </summary>
         public string fax { get; set; }
         //private string FAX
         //{
@@ -161,6 +230,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { fax = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Instalation Type
+        /// </summary>
         public string instalationType { get; set; }
         private string INSTALLATION_TYPE
         {
@@ -168,6 +240,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { instalationType = value.Trim(); }
         }
 
+        /// <summary>
+        /// Name of the inside sales representative
+        /// </summary>
         public string insideSales { get; set; }
         private string INSIDE_SALES
         {
@@ -175,6 +250,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { insideSales = value.Trim(); }
         }
 
+        /// <summary>
+        /// Owner name
+        /// </summary>
         public string ownerName { get; set; }
         private string OWNER_NAME
         {
@@ -182,6 +260,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { ownerName = value.Trim(); }
         }
 
+        /// <summary>
+        /// Owner phone number
+        /// </summary>
         public string ownerPhone { get; set; }
         private string OWNER_PHONE
         {
@@ -189,6 +270,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { ownerPhone = value.Trim(); }
         }
 
+        /// <summary>
+        /// Owner cell phone number
+        /// </summary>
         public string ownerCelularNumber { get; set; }
         private string OWNER_CELLULAR_NUMBER
         {
@@ -196,6 +280,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { ownerCelularNumber = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Viacheck app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViacheck { get; set; }
         private string IS_VIACHECK
         {
@@ -203,6 +290,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when is Viacheck app was installed on this location
+        /// </summary>
         public string dateIsViacheck { get; set; }
         private string DATE_IS_VIACHECK
         {
@@ -210,6 +300,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateIsViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Viacheck app
+        /// </summary>
         public string mtdCountViacheck { get; set; }
         private string MTD_COUNT_VIACHECK
         {
@@ -217,6 +310,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions for Viacheck app
+        /// </summary>
         public string avgCountViacheck { get; set; }
         private string AVG_COUNT_VIACHECK
         {
@@ -224,6 +320,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Viacheck app
+        /// </summary>
         public string todayCountViacheck { get; set; }
         private string TODAY_COUNT_VIACHECK
         {
@@ -231,6 +330,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Viacheck app
+        /// </summary>
         public string todayAmountViacheck { get; set; }
         private string TODAY_AMOUNT_VIACHECK
         {
@@ -238,6 +340,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross Profit today value for Viacheck app
+        /// </summary>
         public string todayGPViacheck { get; set; }
         private string TODAY_GP_VIACHECK
         {
@@ -245,6 +350,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayGPViacheck = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Viasafe app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViasafe { get; set; }
         private string IS_VIASAFE
         {
@@ -252,6 +360,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when Viasafe app was installed on this location
+        /// </summary>
         public string dateIsViasafe { get; set; }
         private string DATE_IS_VIASAFE
         {
@@ -259,6 +370,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateIsViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Viasafe app
+        /// </summary>
         public string mtdCountViasafe { get; set; }
         private string MTD_COUNT_VIASAFE
         {
@@ -266,6 +380,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Viasafe app
+        /// </summary>
         public string todayCountViasafe { get; set; }
         private string TODAY_COUNT_VIASAFE
         {
@@ -273,6 +390,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for ViaSafe app
+        /// </summary>
         public string todayAmountViasafe { get; set; }
         private string TODAY_AMOUNT_VIASAFE
         {
@@ -280,6 +400,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross Profit today value for Viasafe app
+        /// </summary>
         public string todayGPViasafe { get; set; }
         private string TODAY_GP_VIASAFE
         {
@@ -287,6 +410,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayGPViasafe = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Viatopups app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViaTopups { get; set; }
         private string IS_VIATOPUPS
         {
@@ -294,6 +420,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViaTopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when Topups app was installed on this location
+        /// </summary>
         public string dateIsViatopups { get; set; }
         private string DATE_IS_VIATOPUPS
         {
@@ -301,6 +430,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateIsViatopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Topups app
+        /// </summary>
         public string mtdCountViatopups { get; set; }
         private string MTD_COUNT_VIATOPUPS
         {
@@ -308,6 +440,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountViatopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions for Topups app
+        /// </summary>
         public string avgCountViatopups { get; set; }
         private string AVG_COUNT_VIATOPUPS
         {
@@ -315,6 +450,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountViatopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Topups app
+        /// </summary>
         public string todayCountViatopups { get; set; }
         private string TODAY_COUNT_VIATOPUPS
         {
@@ -322,6 +460,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViatopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Topups app
+        /// </summary>
         public string todayAmountViatopups { get; set; }
         private string TODAY_AMOUNT_VIATOPUPS
         {
@@ -329,6 +470,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViatopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross Profit today value for Topups app
+        /// </summary>
         public string todayGPViatopups { get; set; }
         private string TODAY_GP_VIATOPUPS
         {
@@ -336,6 +480,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayGPViatopups = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Viapay app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViapay { get; set; }
         private string IS_VIAPAY
         {
@@ -343,6 +490,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when Viapay app was installed on this location
+        /// </summary>
         public string dateIsViapay { get; set; }
         private string DATE_IS_VIAPAY
         {
@@ -350,6 +500,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateIsViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Viapay app
+        /// </summary>
         public string mtdCountViapay { get; set; }
         private string MTD_COUNT_VIAPAY
         {
@@ -357,6 +510,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions for Viapay app
+        /// </summary>
         public string avgCountViapay { get; set; }
         private string AVG_COUNT_VIAPAY
         {
@@ -364,6 +520,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Viapay app
+        /// </summary>
         public string todayCountViapay { get; set; }
         private string TODAY_COUNT_VIAPAY
         {
@@ -371,6 +530,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Viapay app
+        /// </summary>
         public string todayAmountViapay { get; set; }
         private string TODAY_AMOUNT_VIAPAY
         {
@@ -378,6 +540,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross Profit today value for Viapay app
+        /// </summary>
         public string todayGPViapay { get; set; }
         private string TODAY_GP_VIAPAY
         {
@@ -385,6 +550,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayGPViapay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Money Orders app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isMoneyOrders { get; set; }
         private string IS_MONEYORDERS
         {
@@ -392,6 +560,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when Money Orders app was installed on this location
+        /// </summary>
         public string dateIsMoneyOrders { get; set; }
         private string DATE_IS_MONEYORDERS
         {
@@ -399,6 +570,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateIsMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Money Orders app
+        /// </summary>
         public string mtdCountMoneyOrders { get; set; }
         private string MTD_COUNT_MONEYORDERS
         {
@@ -406,6 +580,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions for Money Orders app
+        /// </summary>
         public string avgCountMoneyOrders { get; set; }
         private string AVG_COUNT_MONEYORDERS
         {
@@ -413,6 +590,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for Money Orders app
+        /// </summary>
         public string todayCountMoneyOrders { get; set; }
         private string TODAY_COUNT_MONEYORDERS
         {
@@ -420,6 +600,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Money Orders app
+        /// </summary>
         public string todayAmountMoneyOrders { get; set; }
         private string TODAY_AMOUNT_MONEYORDERS
         {
@@ -427,6 +610,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross Profit today value for Money Orders app
+        /// </summary>
         public string todayGPMoneyOrders { get; set; }
         private string TODAY_GP_MONEYORDERS
         {
@@ -434,6 +620,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayGPMoneyOrders = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Billpayment app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViabillpay { get; set; }
         private string IS_VIABILLPAY
         {
@@ -441,6 +630,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when Viapay app was installed on this location
+        /// </summary>
         public string dateIsViabillpay { get; set; }
         private string DATE_IS_VIABILLPAY
         {
@@ -448,6 +640,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateIsViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Billpayment app
+        /// </summary>
         public string mtdCountViabillpay { get; set; }
         private string MTD_COUNT_VIABILLPAY
         {
@@ -455,6 +650,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions for BillPayment app
+        /// </summary>
         public string avgCountViabillpay { get; set; }
         private string AVG_COUNT_VIABILLPAY
         {
@@ -462,6 +660,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions today for BillPayment app
+        /// </summary>
         public string todayCountViabillpay { get; set; }
         private string TODAY_COUNT_VIABILLPAY
         {
@@ -469,6 +670,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Quantity of transactions today for Billpayment app
+        /// </summary>
         public string todayAmountViabillpay { get; set; }
         private string TODAY_AMOUNT_VIABILLPAY
         {
@@ -476,6 +680,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayAmountViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross Profit today value for Billpayment app
+        /// </summary>
         public string todayGPViabillpay { get; set; }
         private string TODAY_GP_VIABILLPAY
         {
@@ -483,6 +690,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayGPViabillpay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if ViaTasa app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViatasa { get; set; }
         private string IS_VIATASA
         {
@@ -490,6 +700,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViatasa = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date transaction count for Viatasa app
+        /// </summary>
         public string mtdCountViatasa { get; set; }
         private string MTD_COUNT_VIATASA
         {
@@ -497,6 +710,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountViatasa = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions for Viatasa app
+        /// </summary>
         public string avgCountViatasa { get; set; }
         private string AVG_COUNT_VIATASA
         {
@@ -504,6 +720,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountViatasa = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value to indicate if Viadeal app is installed in this location (1:Installed 0:Not installed)
+        /// </summary>
         public string isViadeal { get; set; }
         private string IS_VIADEAL
         {
@@ -511,6 +730,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { isViadeal = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate since when Viadeal app was installed on this location
+        /// </summary>
         public string startDateIsViadeal { get; set; }
         private string START_DATE_IS_VIADEAL
         {
@@ -518,6 +740,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { startDateIsViadeal = value.Trim(); }
         }
 
+        /// <summary>
+        /// Date to indicate the last day of Viadeal app working on this location
+        /// </summary>
         public string endDateIsViadeal { get; set; }
         private string END_DATE_IS_VIADEAL
         {
@@ -525,6 +750,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { endDateIsViadeal = value.Trim(); }
         }
 
+        /// <summary>
+        /// Forex trade level major payer                
+        /// </summary>
         public string fxLevelMajorPayer { get; set; }
         private string FX_LEVEL_MAJOR_PAYER
         {
@@ -532,6 +760,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { fxLevelMajorPayer = value.Trim(); }
         }
 
+        /// <summary>
+        /// Hight water mark of location
+        /// </summary>
         public string highWaterMark { get; set; }
         private string HIGH_WATER_MARK
         {
@@ -539,6 +770,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { highWaterMark = value.Trim(); }
         }
 
+        /// <summary>
+        /// Performance of location
+        /// </summary>
         public string performance { get; set; }
         //private string PERFORMANCE
         //{
@@ -546,6 +780,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { performance = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Days Oustanding. Time it takes for an agency to pay the balance at the current sales rate
+        /// </summary>
         public string dso { get; set; }
         //private string DSO
         //{
@@ -553,6 +790,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { dso = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Debit limit value for location
+        /// </summary>
         public string debtLimit { get; set; }
         private string DEBT_LIMIT
         {
@@ -560,6 +800,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { debtLimit = value.Trim(); }
         }
 
+        /// <summary>
+        /// Debit limit value for location in weekenc
+        /// </summary>
         public string debtLimitWknd { get; set; }
         private string DEBT_LIMIT_WKND
         {
@@ -567,6 +810,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { debtLimitWknd = value.Trim(); }
         }
 
+        /// <summary>
+        /// Balance of location
+        /// </summary>
         public string balance { get; set; }
         //private string BALANCE
         //{
@@ -574,6 +820,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { balance = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Outstanding balance for location
+        /// </summary>
         public string outstanding { get; set; }
         //private string OUTSTANDING
         //{
@@ -581,6 +830,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { outstanding = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Available amount
+        /// </summary>
         public string available { get; set; }
         //private string AVAILABLE
         //{
@@ -588,6 +840,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { available = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Financial Status, internal classification
+        /// </summary>
         public string finStatus { get; set; }
         private string FIN_STATUS
         {
@@ -595,6 +850,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { finStatus = value.Trim(); }
         }
 
+        /// <summary>
+        /// Primary payment method of location
+        /// </summary>
         public string primaryPaymentMethod { get; set; }
         private string PRIMARY_PAYMENT_METHOD
         {
@@ -602,6 +860,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { primaryPaymentMethod = value.Trim(); }
         }
 
+        /// <summary>
+        /// Second payment method of location
+        /// </summary>
         public string secondaryPaymentMethod { get; set; }
         private string SECONDARY_PAYMENT_METHOD
         {
@@ -609,6 +870,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { secondaryPaymentMethod = value.Trim(); }
         }
 
+        /// <summary>
+        /// Bank name
+        /// </summary>
         public string bank { get; set; }
         //private string BANK
         //{
@@ -616,6 +880,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { bank = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Terms of use
+        /// </summary>
         public string terms { get; set; }
         //private string TERMS
         //{
@@ -623,6 +890,9 @@ namespace Viam.SalesForce.API.Model.Locations
         //    set { terms = value.Trim(); }
         //}
 
+        /// <summary>
+        /// Date to indicate the last day of inactivation on this location
+        /// </summary>
         public string dateLastInactivation { get; set; }
         private string DATE_LAST_INACTIVATION
         {
@@ -630,6 +900,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateLastInactivation = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of inactivation year to date
+        /// </summary>
         public string numberInactivationYtd { get; set; }
         private string NUMBER_INACTIVATION_YTD
         {
@@ -637,6 +910,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { numberInactivationYtd = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions in current week
+        /// </summary>
         public string countCurrentWeek { get; set; }
         private string COUNT_CURRENT_WEEK
         {
@@ -644,6 +920,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countCurrentWeek = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transactions last week
+        /// </summary>
         public string countLastWeek { get; set; }
         private string COUNT_LAST_WEEK
         {
@@ -651,6 +930,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countLastWeek = value.Trim(); }
         }
 
+        /// <summary>
+        /// Number of transaction today
+        /// </summary>
         public string countToday { get; set; }
         private string COUNT_TODAY
         {
@@ -658,6 +940,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countToday = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value of number of transactions at same day of last week
+        /// </summary>
         public string countSamedayLw { get; set; }
         private string COUNT_SAMEDAY_LW
         {
@@ -665,6 +950,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countSamedayLw = value.Trim(); }
         }
 
+        /// <summary>
+        /// Value of number of transactions yesterday
+        /// </summary>
         public string countYesterday { get; set; }
         private string COUNT_YESTERDAY
         {
@@ -672,6 +960,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countYesterday = value.Trim(); }
         }
 
+        /// <summary>
+        /// Count of total budget
+        /// </summary>
         public string countTotalBudget { get; set; }
         private string COUNT_TOTAL_BUDGET
         {
@@ -679,6 +970,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countTotalBudget = value.Trim(); }
         }
 
+        /// <summary>
+        /// Count of month to date total budget
+        /// </summary>
         public string countMtdBudget { get; set; }
         private string COUNT_MTD_BUDGET
         {
@@ -686,6 +980,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { countMtdBudget = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross profit value current week
+        /// </summary>
         public string gpCurrentWeek { get; set; }
         private string GP_CURRENT_WEEK
         {
@@ -693,6 +990,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { gpCurrentWeek = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross profit value last week
+        /// </summary>
         public string gpLastWeek { get; set; }
         private string GP_LAST_WEEK
         {
@@ -700,6 +1000,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { gpLastWeek = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross profit value today
+        /// </summary>
         public string gpToday { get; set; }
         private string GP_TODAY
         {
@@ -707,30 +1010,49 @@ namespace Viam.SalesForce.API.Model.Locations
             set { gpToday = value.Trim(); }
         }
 
+        /// <summary>
+        /// Gross profit value same day of last week
+        /// </summary>
         public string gpSamedayLw { get; set; }
         private string GP_SAMEDAY_LW
         {
             get { return gpSamedayLw; }
             set { gpSamedayLw = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit value yesterday
+        /// </summary>
         public string gpYesterday { get; set; }
         private string GP_YESTERDAY
         {
             get { return gpYesterday; }
             set { gpYesterday = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit total budget
+        /// </summary>
         public string gpTotalBudget { get; set; }
         private string GP_TOTAL_BUDGET
         {
             get { return gpTotalBudget; }
             set { gpTotalBudget = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit month to date budget
+        /// </summary>
         public string gpMtdBudget { get; set; }
         private string GP_MTD_BUDGET
         {
             get { return gpMtdBudget; }
             set { gpMtdBudget = value.Trim(); }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string mgpCurrentWeek { get; set; }
         private string mGP_CURRENT_WEEK
         {
@@ -761,18 +1083,30 @@ namespace Viam.SalesForce.API.Model.Locations
             get { return mgpYesterday; }
             set { mgpYesterday = value.Trim(); }
         }
+
+        /// <summary>
+        /// Amount for current week
+        /// </summary>
         public string amountCurrentWeek { get; set; }
         private string AMOUNT_CURRENT_WEEK
         {
             get { return amountCurrentWeek; }
             set { amountCurrentWeek = value.Trim(); }
         }
+
+        /// <summary>
+        /// Amount last week
+        /// </summary>
         public string amountLastweek { get; set; }
         private string AMOUNT_LAST_WEEK
         {
             get { return amountLastweek; }
             set { amountLastweek = value.Trim(); }
         }
+
+        /// <summary>
+        /// Amount today
+        /// </summary>
         public string amountToday { get; set; }
         private string AMOUNT_TODAY
         {
@@ -780,24 +1114,39 @@ namespace Viam.SalesForce.API.Model.Locations
             set { amountToday = value.Trim(); }
         }
 
+        /// <summary>
+        /// Amount same day of last week
+        /// </summary>
         public string amountSamedayLw { get; set; }
         private string AMOUNT_SAMEDAY_LW
         {
             get { return amountSamedayLw; }
             set { amountSamedayLw = value.Trim(); }
         }
+
+        /// <summary>
+        /// Amount yesterday
+        /// </summary>
         public string amountYesterday { get; set; }
         private string AMOUNT_YESTERDAY
         {
             get { return amountYesterday; }
             set { amountYesterday = value.Trim(); }
         }
+
+        /// <summary>
+        /// Latitude of location
+        /// </summary>
         public string latitude { get; set; }
         private string LATITUDE
         {
             get { return latitude; }
             set { latitude = value.Trim(); }
         }
+
+        /// <summary>
+        /// Longitude of location
+        /// </summary>
         public string longitude { get; set; }
         private string LONGITUDE
         {
@@ -805,24 +1154,39 @@ namespace Viam.SalesForce.API.Model.Locations
             set { longitude = value.Trim(); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string finClosingDay { get; set; }
         private string FIN_CLOSING_DAY
         {
             get { return finClosingDay; }
             set { finClosingDay = value.Trim(); }
         }
+
+        /// <summary>
+        /// Day of the last agent visit
+        /// </summary>
         public string daysLastVisit { get; set; }
         private string DAYS_LAST_VISIT
         {
             get { return daysLastVisit; }
             set { daysLastVisit = value.Trim(); }
         }
+
+        /// <summary>
+        /// Day of the last agent call
+        /// </summary>
         public string daysLastCall { get; set; }
         private string DAYS_LAST_CALL
         {
             get { return daysLastCall; }
             set { daysLastCall = value.Trim(); }
         }
+
+        /// <summary>
+        /// Date agreement
+        /// </summary>
         public string dateAgreement { get; set; }
         private string DATE_AGREEMENT
         {
@@ -830,18 +1194,29 @@ namespace Viam.SalesForce.API.Model.Locations
             set { dateAgreement = value.Trim(); }
         }
 
+        /// <summary>
+        /// Payment agreement
+        /// </summary>
         public string paymentAgreement { get; set; }
         private string PAYMENT_AGREEMENT
         {
             get { return paymentAgreement; }
             set { paymentAgreement = value.Trim(); }
         }
+
+        /// <summary>
+        /// Payments made
+        /// </summary>
         public string paymentsMade { get; set; }
         private string PAYMENTS_MADE
         {
             get { return paymentsMade; }
             set { paymentsMade = value.Trim(); }
         }
+
+        /// <summary>
+        /// Payment agreement balance
+        /// </summary>
         public string paymentAgreementBalance { get; set; }
         private string PAYMENT_AGREEMENT_BALANCE
         {
@@ -849,16 +1224,20 @@ namespace Viam.SalesForce.API.Model.Locations
             set { paymentAgreementBalance = value.Trim(); }
         }
 
+        /// <summary>
+        /// Last change
+        /// </summary>
         public string lastChange { get; set; }
-
         private string LAST_CHANGE
         {
             get { return lastChange; }
             set { lastChange = value.Trim(); }
         }
 
+        /// <summary>
+        /// Flag to indicate if the location is synchronized (1:not synchronized 0:synchronized)
+        /// </summary>
         public string synchronize { get; set; }
-
         private string SYNCHONIZE
         {
             get { return synchronize; }

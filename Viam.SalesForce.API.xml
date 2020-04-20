@@ -98,6 +98,661 @@
             <param name="measure">Date update</param>
             <returns></returns>
         </member>
+        <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.idChain">
+            <summary>
+            Chain code of branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.nameChain">
+            <summary>
+            Name of chain
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.idFlagChain">
+            <summary>
+            Flag to indicate the status chain (A:Active I:Inactive)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.idStatusChain">
+            <summary>
+            Code of status chain (O:Open C:Closed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.legalNameChain">
+            <summary>
+            Respresentative name that belong to the chain
+            </summary>
+        </member>
+        <member name="T:Viam.SalesForce.API.Model.Locations.LocationModel">
+            <summary>
+            Location object to store data
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.id">
+            <summary>
+            Location code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.idGroupCompany">
+            <summary>
+            Code of the company group
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.branches">
+            <summary>
+            List of branches, separated by comma
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.type">
+            <summary>
+            Type of location (New or Existing)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.creationDate">
+            <summary>
+            Creation date of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.daysOpen">
+            <summary>
+            Quantity of days open
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.companyName">
+            <summary>
+            Company Name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.groupCompany">
+            <summary>
+            Group of company
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.name">
+            <summary>
+            Name of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.status">
+            <summary>
+            Status of location (A:Active I:Inactive)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.extendedStatus">
+            <summary>
+            Status of location (Open-Active, Open-Inactive, Closed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.city">
+            <summary>
+            Location City
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.state">
+            <summary>
+            Location State
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.zone">
+            <summary>
+            Location Zone
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.salesRepresentative">
+            <summary>
+            Location Sales Representative
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.idSalesRepresentative">
+            <summary>
+            Location Sales Representative identifier
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.manager">
+            <summary>
+            Manager of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.address">
+            <summary>
+            Location Address
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.zip">
+            <summary>
+            Location Zip code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.phone1">
+            <summary>
+            Location Phone number 1
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.phone2">
+            <summary>
+            Location phone number 2
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.fax">
+            <summary>
+            Location Fax number
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.instalationType">
+            <summary>
+            Instalation Type
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.insideSales">
+            <summary>
+            Name of the inside sales representative
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.ownerName">
+            <summary>
+            Owner name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.ownerPhone">
+            <summary>
+            Owner phone number
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.ownerCelularNumber">
+            <summary>
+            Owner cell phone number
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViacheck">
+            <summary>
+            Value to indicate if Viacheck app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateIsViacheck">
+            <summary>
+            Date to indicate since when is Viacheck app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountViacheck">
+            <summary>
+            Month to date transaction count for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.avgCountViacheck">
+            <summary>
+            Average transactions for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayCountViacheck">
+            <summary>
+            Number of transactions today for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayAmountViacheck">
+            <summary>
+            Quantity of transactions today for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayGPViacheck">
+            <summary>
+            Gross Profit today value for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViasafe">
+            <summary>
+            Value to indicate if Viasafe app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateIsViasafe">
+            <summary>
+            Date to indicate since when Viasafe app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountViasafe">
+            <summary>
+            Month to date transaction count for Viasafe app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayCountViasafe">
+            <summary>
+            Number of transactions today for Viasafe app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayAmountViasafe">
+            <summary>
+            Quantity of transactions today for ViaSafe app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayGPViasafe">
+            <summary>
+            Gross Profit today value for Viasafe app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViaTopups">
+            <summary>
+            Value to indicate if Viatopups app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateIsViatopups">
+            <summary>
+            Date to indicate since when Topups app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountViatopups">
+            <summary>
+            Month to date transaction count for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.avgCountViatopups">
+            <summary>
+            Average transactions for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayCountViatopups">
+            <summary>
+            Number of transactions today for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayAmountViatopups">
+            <summary>
+            Quantity of transactions today for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayGPViatopups">
+            <summary>
+            Gross Profit today value for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViapay">
+            <summary>
+            Value to indicate if Viapay app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateIsViapay">
+            <summary>
+            Date to indicate since when Viapay app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountViapay">
+            <summary>
+            Month to date transaction count for Viapay app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.avgCountViapay">
+            <summary>
+            Average transactions for Viapay app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayCountViapay">
+            <summary>
+            Number of transactions today for Viapay app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayAmountViapay">
+            <summary>
+            Quantity of transactions today for Viapay app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayGPViapay">
+            <summary>
+            Gross Profit today value for Viapay app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isMoneyOrders">
+            <summary>
+            Value to indicate if Money Orders app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateIsMoneyOrders">
+            <summary>
+            Date to indicate since when Money Orders app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountMoneyOrders">
+            <summary>
+            Month to date transaction count for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.avgCountMoneyOrders">
+            <summary>
+            Average transactions for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayCountMoneyOrders">
+            <summary>
+            Number of transactions today for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayAmountMoneyOrders">
+            <summary>
+            Quantity of transactions today for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayGPMoneyOrders">
+            <summary>
+            Gross Profit today value for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViabillpay">
+            <summary>
+            Value to indicate if Billpayment app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateIsViabillpay">
+            <summary>
+            Date to indicate since when Viapay app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountViabillpay">
+            <summary>
+            Month to date transaction count for Billpayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.avgCountViabillpay">
+            <summary>
+            Average transactions for BillPayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayCountViabillpay">
+            <summary>
+            Number of transactions today for BillPayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayAmountViabillpay">
+            <summary>
+            Quantity of transactions today for Billpayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.todayGPViabillpay">
+            <summary>
+            Gross Profit today value for Billpayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViatasa">
+            <summary>
+            Value to indicate if ViaTasa app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mtdCountViatasa">
+            <summary>
+            Month to date transaction count for Viatasa app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.avgCountViatasa">
+            <summary>
+            Average transactions for Viatasa app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.isViadeal">
+            <summary>
+            Value to indicate if Viadeal app is installed in this location (1:Installed 0:Not installed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.startDateIsViadeal">
+            <summary>
+            Date to indicate since when Viadeal app was installed on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.endDateIsViadeal">
+            <summary>
+            Date to indicate the last day of Viadeal app working on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.fxLevelMajorPayer">
+            <summary>
+            Forex trade level major payer                
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.highWaterMark">
+            <summary>
+            Hight water mark of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.performance">
+            <summary>
+            Performance of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dso">
+            <summary>
+            Days Oustanding. Time it takes for an agency to pay the balance at the current sales rate
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.debtLimit">
+            <summary>
+            Debit limit value for location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.debtLimitWknd">
+            <summary>
+            Debit limit value for location in weekenc
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.balance">
+            <summary>
+            Balance of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.outstanding">
+            <summary>
+            Outstanding balance for location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.available">
+            <summary>
+            Available amount
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.finStatus">
+            <summary>
+            Financial Status, internal classification
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.primaryPaymentMethod">
+            <summary>
+            Primary payment method of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.secondaryPaymentMethod">
+            <summary>
+            Second payment method of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.bank">
+            <summary>
+            Bank name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.terms">
+            <summary>
+            Terms of use
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateLastInactivation">
+            <summary>
+            Date to indicate the last day of inactivation on this location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.numberInactivationYtd">
+            <summary>
+            Number of inactivation year to date
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countCurrentWeek">
+            <summary>
+            Number of transactions in current week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countLastWeek">
+            <summary>
+            Number of transactions last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countToday">
+            <summary>
+            Number of transaction today
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countSamedayLw">
+            <summary>
+            Value of number of transactions at same day of last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countYesterday">
+            <summary>
+            Value of number of transactions yesterday
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countTotalBudget">
+            <summary>
+            Count of total budget
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.countMtdBudget">
+            <summary>
+            Count of month to date total budget
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpCurrentWeek">
+            <summary>
+            Gross profit value current week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpLastWeek">
+            <summary>
+            Gross profit value last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpToday">
+            <summary>
+            Gross profit value today
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpSamedayLw">
+            <summary>
+            Gross profit value same day of last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpYesterday">
+            <summary>
+            Gross profit value yesterday
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpTotalBudget">
+            <summary>
+            Gross profit total budget
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.gpMtdBudget">
+            <summary>
+            Gross profit month to date budget
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mgpCurrentWeek">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.amountCurrentWeek">
+            <summary>
+            Amount for current week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.amountLastweek">
+            <summary>
+            Amount last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.amountToday">
+            <summary>
+            Amount today
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.amountSamedayLw">
+            <summary>
+            Amount same day of last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.amountYesterday">
+            <summary>
+            Amount yesterday
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.finClosingDay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.daysLastVisit">
+            <summary>
+            Day of the last agent visit
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.daysLastCall">
+            <summary>
+            Day of the last agent call
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.dateAgreement">
+            <summary>
+            Date agreement
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.paymentAgreement">
+            <summary>
+            Payment agreement
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.paymentsMade">
+            <summary>
+            Payments made
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.paymentAgreementBalance">
+            <summary>
+            Payment agreement balance
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.lastChange">
+            <summary>
+            Last change
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.synchronize">
+            <summary>
+            Flag to indicate if the location is synchronized (1:not synchronized 0:synchronized)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.MainBranchModel.idMainBranch">
+            <summary>
+            Code of Main branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.MainBranchModel.nameMainBranch">
+            <summary>
+            Name of Main branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.MainBranchModel.flagGrupo">
+            <summary>
+            Flag to indicate status (A:Active C:Closed I:Inactive)
+            </summary>
+        </member>
+        <member name="T:Viam.SalesForce.API.Model.Locations.ResumeData">
+            <summary>
+            Resume object to store data
+            </summary>
+        </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.idLocation">
             <summary>
             Location Code
@@ -105,7 +760,7 @@
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.dso">
             <summary>
-            Dso value
+            Days Oustanding. Time it takes for an agency to pay the balance at the current sales rate
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.currentPastDue">
@@ -135,42 +790,42 @@
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.meanDaysInactive">
             <summary>
-            Mean days inactive
+            Mean days inactive value
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.dateIsViacheck">
             <summary>
-            Date from viacheck activated product
+            Date to indicate since when is Viacheck app was installed on this location
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.mtdCountViacheck">
             <summary>
-            Month to day value for viacheck transactions
+            Month to date transaction count for Viacheck app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.avgCountViacheck">
             <summary>
-            Average value for Viacheck transactions
+            Average transactions for Viacheck app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayCountViacheck">
             <summary>
-            Today number of Viacheck transactions
+            Number of transactions today for Viacheck app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayAmountViacheck">
             <summary>
-            Today value of viacheck transactions
+            Quantity of transactions today for Viacheck app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.mtdCountViasafe">
             <summary>
-            Month to day value for Viasafe transactions
+            Month to date transaction count for Viasafe app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.avgCountViasafe">
             <summary>
-            Average value for Viasafe transactions
+            Average transactions for Viasafe app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayCountViasafe">
@@ -185,67 +840,137 @@
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.mtdCountTopups">
             <summary>
-            Month to day value for topups transactions
+            Month to date transaction count for Topups app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.avgCountTopups">
             <summary>
-            Average value for topups transactions
+            Average transactions for Topups app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayCountTopups">
             <summary>
-            Today number of topups transactions
+            Number of transactions today for Topups app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayAmountTopups">
             <summary>
-            Today value of topups transactions
+            Quantity of transactions today for Topups app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.mtdCountMoneyOrders">
             <summary>
-            Month to day value for Money Orders transactions
+            Month to date transaction count for Money Orders app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.avgCountMoneyOrders">
             <summary>
-            Average value for Money Orders transactions
+            Average transactions for Money Orders app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayCountMoneyOrders">
             <summary>
-            Today number of Money Orders transactions
+            Number of transactions today for Money Orders app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayAmountMoneyOrders">
             <summary>
-            Today value of Money Orders transactions
+            Quantity of transactions today for Money Orders app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.avgCountMoneyTransfer">
             <summary>
-            Average value for Money Transfer transactions
+            Average transactions for Money transfer app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayCountMoneyTransfer">
             <summary>
-            Today number of Money transfer transactions
+            Number of transactions today for Money transfer app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayAmountMoneyTransfer">
             <summary>
-            Today value of Money transfer transactions
+            Quantity of transactions today for Money transfer app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.fxLevelMajorPayer">
             <summary>
-            fx level major payer
+            Forex trade level major payer
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.highWaterMark">
             <summary>
-            Higt water marck
+            Hight water mark of location
+            </summary>
+        </member>
+        <member name="T:Viam.SalesForce.API.Model.Locations.ResumeDataToday">
+            <summary>
+            Resume today object to store data
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.idLocation">
+            <summary>
+            Location code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayCountViacheck">
+            <summary>
+            Number of transactions today for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayAmountViacheck">
+            <summary>
+            Quantity of transactions today for Viacheck app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayCountViasafe">
+            <summary>
+            Number of transactions today for Viasafe app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayAmountViasafe">
+            <summary>
+            Quantity of transactions today for ViaSafe app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayCountViaTopups">
+            <summary>
+            Number of transactions today for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayAmountViaTopups">
+            <summary>
+            Quantity of transactions today for Topups app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayCountViaBillpay">
+            <summary>
+            Number of transactions today for BillPayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayAmountViaBillpay">
+            <summary>
+            Quantity of transactions today for Billpayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayCountMoneyOrders">
+            <summary>
+            Number of transactions today for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayAmountMoneyorders">
+            <summary>
+            Quantity of transactions today for Money Orders app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayCountMoneytransfer">
+            <summary>
+            Number of transactions today for Money transfer app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.todayAmountMoneytransfer">
+            <summary>
+            Quantity of transactions today for Money transfer app
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.fxLevelMajorPayer">
