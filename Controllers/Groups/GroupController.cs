@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -17,6 +18,7 @@ namespace Viam.SalesForce.API.Controllers.Groups
     /// </summary>
     [Route("api/group")]
     [ApiController]
+    [Authorize]
     public class GroupController : Controller
     {
         private readonly ILogger<GroupController> _logger;
@@ -58,6 +60,5 @@ namespace Viam.SalesForce.API.Controllers.Groups
                 return BadRequest(ex.Message.ToString());
             }
         }
-
     }
 }

@@ -17,6 +17,7 @@ namespace Viam.SalesForce.API.Controllers.Chain
     /// </summary>
     [Route("api/chain")]
     [ApiController]
+    [Authorize]
     public class ChainController : Controller
     {
         private readonly ILogger<ChainController> _logger;

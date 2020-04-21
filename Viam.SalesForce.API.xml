@@ -82,6 +82,25 @@
             </summary>
             <returns>True/False</returns>
         </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._logger">
+            <summary>
+            Interface for log management.
+            </summary>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Users.UsersController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Users.UsersController})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration">configuration object</param>
+            <param name="logger">loggin object</param>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Users.UsersController.Authenticate(Viam.SalesForce.API.Model.User.UserModel)">
+            <summary>
+            Method to API access.
+            </summary>
+            <param name="userModel"></param>
+            <returns>Token authetication</returns>
+        </member>
         <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getLocations(System.String,System.String)">
             <summary>
             Get location data by identifier
@@ -97,6 +116,11 @@
             <param name="idLocation">Location code</param>
             <param name="measure">Date update</param>
             <returns></returns>
+        </member>
+        <member name="P:Viam.SalesForce.API.Helper.AppSettings.SecretKey">
+            <summary>
+            Key to generate the token access.
+            </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.idChain">
             <summary>
@@ -977,6 +1001,70 @@
             <summary>
             Forex level major payer
             </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.Usuario.Login">
+            <summary>
+            User name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.Usuario.TypeUser">
+            <summary>
+            Type user
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.Usuario.Status">
+            <summary>
+            Status of agent
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.Usuario.Fname">
+            <summary>
+            First Name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.Usuario.Lname">
+            <summary>
+            Last Name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.Usuario.Token">
+            <summary>
+            Chain of characters
+            </summary>
+        </member>
+        <member name="T:Viam.SalesForce.API.Services.UserService">
+            <summary>
+            Interface for User Class
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Services.UserService._secretKey">
+            <summary>
+            Secret key access value
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Services.UserService._issuer">
+            <summary>
+            Value to configure access key
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Services.UserService._logger">
+            <summary>
+            Interface to log management
+            </summary>
+        </member>
+        <member name="M:Viam.SalesForce.API.Services.UserService.#ctor(Viam.SalesForce.API.Model.Configuration.ConfigurationModel)">
+            <summary>
+            Constructor User Class
+            </summary>
+            <param name="appSettings">Configuration values</param>
+            <param name="logger">Custom log object</param>
+        </member>
+        <member name="M:Viam.SalesForce.API.Services.UserService.Authenticate(Viam.SalesForce.API.Model.User.Usuario)">
+            <summary>
+            Method to get token access
+            </summary>
+            <param name="usuario">usuario object</param>
+            <returns>usuario object with token</returns>
         </member>
     </members>
 </doc>

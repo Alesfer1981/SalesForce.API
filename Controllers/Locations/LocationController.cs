@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -17,6 +18,7 @@ namespace Viam.SalesForce.API.Controllers.Locations
     /// </summary>
     [Route("api/location")]
     [ApiController]
+    [Authorize]
     public class LocationController : Controller
     {
         private readonly ILogger<LocationController> _logger;
@@ -108,6 +110,7 @@ namespace Viam.SalesForce.API.Controllers.Locations
         /// <returns>True/False</returns>
         [HttpGet]
         [Route("echoping")]
+        [AllowAnonymous]
         public IActionResult EchoPingAPI()
         {
             return Ok(true);

@@ -22,5 +22,17 @@ namespace Viam.SalesForce.API.Model.Configuration
             get;
             set;
         }
+
+        public string SecretKey
+        {
+            get;
+            set;
+        }
+
+        public string Issuer
+        {
+            get;
+            set;
+        }
     }
 }

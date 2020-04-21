@@ -18,5 +18,7 @@ namespace Viam.SalesForce.API.Helper
 
         internal const string spSalesFChainList = "[crm].[spSalesFChainList]";
 
+        internal const string spValidateCrmUsers = "[crm].[spValidateCrmUsers]";
+
     }
 }
