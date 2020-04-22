@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Code of Main branch
         /// </summary>
+        [Required, StringLength(15), MinLength(6)]
         public string idMainBranch { get; set; }
         private string ID_MAIN_BRANCH
         {
@@ -20,6 +22,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Name of Main branch
         /// </summary>
+        [Required, StringLength(100), MinLength(6)]
         public string nameMainBranch { get; set; }
         private string NAME_MAIN_BRANCH
         {
@@ -30,6 +33,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Flag to indicate status (A:Active C:Closed I:Inactive)
         /// </summary>
+        [Required, StringLength(1), MinLength(1)]
         public string flagGrupo { get; set; }
         private string FLAG_GRUPO
         {

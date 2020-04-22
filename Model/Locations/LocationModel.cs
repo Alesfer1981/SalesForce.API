@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Location code
         /// </summary>
+        [Required, StringLength(15), MinLength(6)]
         public string id { get; set; }
         //private string ID_LOCATION
         //{
@@ -53,6 +55,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Creation date of location
         /// </summary>
+        [Timestamp]
         public string creationDate { get; set; }
         private string CREATION_DATE
         {
@@ -1051,7 +1054,7 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// 
+        /// Gross profit by transaction in current week
         /// </summary>
         public string mgpCurrentWeek { get; set; }
         private string mGP_CURRENT_WEEK
@@ -1059,24 +1062,40 @@ namespace Viam.SalesForce.API.Model.Locations
             get { return mgpCurrentWeek; }
             set { mgpCurrentWeek = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit by transaction in last week
+        /// </summary>
         public string mgpLastWeek { get; set; }
         private string mGP_LAST_WEEK
         {
             get { return mgpLastWeek; }
             set { mgpLastWeek = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit by transaction today
+        /// </summary>
         public string mgpToday { get; set; }
         private string mGP_TODAY
         {
             get { return mgpToday; }
             set { mgpToday = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit by transaction in same day of week
+        /// </summary>
         public string mgpSamedayLw { get; set; }
         private string mGP_SAMEDAY_LW
         {
             get { return mgpSamedayLw; }
             set { mgpSamedayLw = value.Trim(); }
         }
+
+        /// <summary>
+        /// Gross profit by transaction yesterday
+        /// </summary>
         public string mgpYesterday { get; set; }
         private string mGP_YESTERDAY
         {

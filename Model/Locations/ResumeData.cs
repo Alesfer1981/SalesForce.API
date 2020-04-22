@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Location Code
         /// </summary>
+        [Required, StringLength(15), MinLength(6)]
         public string idLocation { get; set; }
         private string ID_LOCATION
         {
