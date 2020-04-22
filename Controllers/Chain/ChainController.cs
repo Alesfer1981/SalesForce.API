@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -20,14 +21,25 @@ namespace Viam.SalesForce.API.Controllers.Chain
     [Authorize]
     public class ChainController : Controller
     {
+        /// <summary>
+        /// Log management object
+        /// </summary>
         private readonly ILogger<ChainController> _logger;
+
+        /// <summary>
+        /// Configuration object
+        /// </summary>
         private readonly IOptions<ConfigurationModel> _configurations;
+
+        /// <summary>
+        /// Business layer object
+        /// </summary>
         private ChainBusiness _chainBusiness = null;
 
         /// <summary>
         /// constructor
         /// </summary>
-        /// <param name="configuration"></param>
+        /// <param name="configuration">configuration object<</param>
         public ChainController(IOptions<ConfigurationModel> configuration)
         {
             _configurations = configuration;
@@ -37,7 +49,7 @@ namespace Viam.SalesForce.API.Controllers.Chain
         /// <summary>
         /// List of chain codes
         /// </summary>
-        /// <param name="filter">conditional</param>
+        /// <param name="filter">conditional parameter to filter information, min 3 characters</param>
         /// <returns>A list of chain codes</returns>
         [HttpGet]
         //[Route("chain")]
