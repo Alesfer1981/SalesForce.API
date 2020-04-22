@@ -8,10 +8,16 @@ namespace Viam.SalesForce.API.Model.User
 {
     public class UserModel
     {
-
+        /// <summary>
+        /// User Name
+        /// </summary>
+        [Required, StringLength(50), MinLength(6)]
         public string UserName { get; set; }
 
-
+        /// <summary>
+        /// Access key
+        /// </summary>
+        [Required, StringLength(50), MinLength(6)]
         public string Password { get; set; }
     }
 
