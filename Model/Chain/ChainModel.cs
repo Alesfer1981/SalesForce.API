@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace Viam.SalesForce.API.Model.Chain
         /// <summary>
         /// Chain code of branch
         /// </summary>
+        [Required, StringLength(50), MinLength(6)]
         public string idChain { get; set; }
         private string ID_CHAIN
         {
@@ -20,6 +22,7 @@ namespace Viam.SalesForce.API.Model.Chain
         /// <summary>
         /// Name of chain
         /// </summary>
+        [Required, StringLength(100)]
         public string nameChain { get; set; }
         private string NAME_CHAIN
         {
@@ -30,6 +33,7 @@ namespace Viam.SalesForce.API.Model.Chain
         /// <summary>
         /// Flag to indicate the status chain (A:Active I:Inactive)
         /// </summary>
+        [Required, StringLength(1), MinLength(1)]
         public string idFlagChain { get; set; }
         private string ID_FLAG_CHAIN
         {
@@ -40,6 +44,7 @@ namespace Viam.SalesForce.API.Model.Chain
         /// <summary>
         /// Code of status chain (O:Open C:Closed)
         /// </summary>
+        [Required, StringLength(1), MinLength(1)]
         public string idStatusChain { get; set; }
         private string ID_STATUS_CHAIN
         {
@@ -50,6 +55,7 @@ namespace Viam.SalesForce.API.Model.Chain
         /// <summary>
         /// Respresentative name that belong to the chain
         /// </summary>
+        [StringLength(100)]
         public string legalNameChain { get; set; }
         private string LEGAL_NAME_CHAIN
         {
