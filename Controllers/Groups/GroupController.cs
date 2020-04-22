@@ -21,12 +21,19 @@ namespace Viam.SalesForce.API.Controllers.Groups
     [Authorize]
     public class GroupController : Controller
     {
+        /// <summary>
+        /// Log management object
+        /// </summary>
         private readonly ILogger<GroupController> _logger;
 
-        //private readonly ILoggerManager loggerFactory;
-
+        /// <summary>
+        /// Configuration object
+        /// </summary>
         private readonly IOptions<ConfigurationModel> _configurations;
 
+        /// <summary>
+        /// Business layer object
+        /// </summary>
         private GroupBusiness _groupBusiness = null;
 
         /// <summary>
@@ -44,7 +51,7 @@ namespace Viam.SalesForce.API.Controllers.Groups
         /// <summary>
         /// List of main branches
         /// </summary>
-        /// <param name="idLocation">Location identifier</param>
+        /// <param name="idLocation">Code of location</param>
         /// <returns>List of branches</returns>
         [HttpGet]
         [Route("branch")]
