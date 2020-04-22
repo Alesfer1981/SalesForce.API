@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -18,14 +19,23 @@ namespace Viam.SalesForce.API.Controllers.Users
     public class UsersController : Controller
     {
         /// <summary>
-        /// Interface for log management.
+        /// Log management object
         /// </summary>
         private readonly ILogger<UsersController> _logger;
 
+        /// <summary>
+        /// Configuration object
+        /// </summary>
         private readonly IOptions<ConfigurationModel> _configurations;
 
+        /// <summary>
+        /// Business layer object
+        /// </summary>
         private UserBusiness _userBusiness = null;
 
+        /// <summary>
+        /// Services layer object
+        /// </summary>
         private UserService _userService = null;
 
         /// <summary>
@@ -43,11 +53,21 @@ namespace Viam.SalesForce.API.Controllers.Users
 
         /// <summary>
         /// Method to API access.
-        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///         userName:"userValue",
+        ///	        password:"passwordValue"
+        ///     }
+        ///
+        /// </remarks>
         /// <param name="userModel"></param>
         /// <returns>Token authetication</returns>
         [HttpPost]
         [Route("login")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Authenticate([FromBody] UserModel userModel)
         {
             if (!ModelState.IsValid)
