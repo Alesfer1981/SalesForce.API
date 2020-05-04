@@ -9,22 +9,47 @@
             Controller to chain management
             </summary>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Chain.ChainController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel})">
+        <member name="F:Viam.SalesForce.API.Controllers.Chain.ChainController._logger">
             <summary>
-            constructor
+            Log management object
             </summary>
-            <param name="configuration"></param>
         </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Chain.ChainController._configurations">
+            <summary>
+            Configuration object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Chain.ChainController._chainBusiness">
+            <summary>
+            Business layer object
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Viam.SalesForce.API.Controllers.Chain.ChainController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Chain.ChainController})" -->
         <member name="M:Viam.SalesForce.API.Controllers.Chain.ChainController.getChainList(System.String)">
             <summary>
             List of chain codes
             </summary>
-            <param name="filter">conditional</param>
+            <param name="filter">conditional parameter to filter information, min 3 characters</param>
             <returns>A list of chain codes</returns>
         </member>
         <member name="T:Viam.SalesForce.API.Controllers.Groups.GroupController">
             <summary>
             Controller to group management
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Groups.GroupController._logger">
+            <summary>
+            Log management object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Groups.GroupController._configurations">
+            <summary>
+            Configuration object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Groups.GroupController._groupBusiness">
+            <summary>
+            Business layer object
             </summary>
         </member>
         <member name="M:Viam.SalesForce.API.Controllers.Groups.GroupController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Groups.GroupController})">
@@ -38,12 +63,34 @@
             <summary>
             List of main branches
             </summary>
-            <param name="idLocation">Location identifier</param>
+            <param name="idLocation">Code of location</param>
             <returns>List of branches</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Groups.GroupController.updateCredit(Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam)">
+            <summary>
+            Update credit of group branch
+            </summary>
+            <param name="salesFUpdateCreditParam">salesFUpdateCreditParam object</param>
+            <returns></returns>
         </member>
         <member name="T:Viam.SalesForce.API.Controllers.Locations.LocationController">
             <summary>
             Controller to locations management
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Locations.LocationController._logger">
+            <summary>
+            Log management object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Locations.LocationController._configurations">
+            <summary>
+            Configuration object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Locations.LocationController._locationBusiness">
+            <summary>
+            Business layer object
             </summary>
         </member>
         <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Locations.LocationController})">
@@ -58,10 +105,10 @@
             Get a list of locations
             </summary>
             <param name="idLocation">Code of location</param>
-            <param name="synchronize"></param>
-            <returns></returns>
+            <param name="synchronize">Flag to indicate if is upated or not 1:updated 0:not updated</param>
+            <returns>List of locations</returns>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.Int32)">
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.String)">
             <summary>
             Report of resume data
             </summary>
@@ -76,15 +123,81 @@
             <param name="idLocation">Code of location</param>
             <returns>List of resume data today</returns>
         </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.setSynchronized(System.String,System.String)">
+            <summary>
+            Set status a group of locations
+            </summary>
+            <param name="idLocationList">List of locations codes separated by comma</param>
+            <param name="value">Value to set synchronize column</param>
+            <returns>Confirm operation</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.setLocationStatus(System.String)">
+            <summary>
+            Disable all location active products
+            </summary>
+            <param name="idLocation">Code of location</param>
+            <returns>Message response</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getCurrentRates(System.String,System.String)">
+            <summary>
+            Get list of current rates
+            </summary>
+            <param name="idLocation">Code of location</param>
+            <param name="dateFrom"></param>
+            <returns></returns>
+        </member>
         <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.EchoPingAPI">
             <summary>
             Test conection
             </summary>
             <returns>True/False</returns>
         </member>
+        <member name="T:Viam.SalesForce.API.Controllers.Products.ProductController">
+            <summary>
+            Controller to chain management
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Products.ProductController._logger">
+            <summary>
+            Log management object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Products.ProductController._configurations">
+            <summary>
+            Configuration object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Products.ProductController._productBusiness">
+            <summary>
+            Business layer object
+            </summary>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Products.ProductController.setProductStatus(System.String,System.String,System.String)">
+            <summary>
+            Update product status
+            </summary>
+            <param name="idbranch">code of product</param>
+            <param name="flag">status value to change</param>
+            <returns>Message response</returns>
+        </member>
         <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._logger">
             <summary>
-            Interface for log management.
+            Log management object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._configurations">
+            <summary>
+            Configuration object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._userBusiness">
+            <summary>
+            Business layer object
+            </summary>
+        </member>
+        <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._userService">
+            <summary>
+            Services layer object
             </summary>
         </member>
         <member name="M:Viam.SalesForce.API.Controllers.Users.UsersController.#ctor(Microsoft.Extensions.Options.IOptions{Viam.SalesForce.API.Model.Configuration.ConfigurationModel},Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Users.UsersController})">
@@ -94,12 +207,13 @@
             <param name="configuration">configuration object</param>
             <param name="logger">loggin object</param>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Users.UsersController.Authenticate(Viam.SalesForce.API.Model.User.UserModel)">
+        <!-- Badly formed XML comment ignored for member "M:Viam.SalesForce.API.Controllers.Users.UsersController.Authenticate(Viam.SalesForce.API.Model.User.UserModel)" -->
+        <member name="M:Viam.SalesForce.API.Data.Groups.GroupRepository.updateCredit(Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam)">
             <summary>
-            Method to API access.
+            Update credit of group branch
             </summary>
-            <param name="userModel"></param>
-            <returns>Token authetication</returns>
+            <param name="salesFUpdateCreditParam">salesFUpdateCreditParam object</param>
+            <returns></returns>
         </member>
         <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getLocations(System.String,System.String)">
             <summary>
@@ -109,7 +223,7 @@
             <param name="synchronize"></param>
             <returns></returns>
         </member>
-        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getResumeData(System.String,System.Int32)">
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getResumeData(System.String,System.String)">
             <summary>
             Get resume data
             </summary>
@@ -117,9 +231,46 @@
             <param name="measure">Date update</param>
             <returns></returns>
         </member>
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getResumeDataToday(System.String)">
+            <summary>
+            Report of data at today date
+            </summary>
+            <param name="idLocation">Code of location</param>
+            <returns>List of resume data today</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.setSynchronized(System.String,System.String)">
+            <summary>
+            Set status a group of locations
+            </summary>
+            <param name="idLocationList">List of locations codes separated by comma</param>
+            <param name="value">Value to set synchronize column</param>
+            <returns>Confirm operation</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.setLocationStatus(System.String)">
+            <summary>
+            Change status of location
+            </summary>
+            <param name="idLocation">Code of location</param>
+            <param name="status">status value O:open C:Closed</param>
+            <param name="flag">flag status A:Active I:Incative</param>
+            <returns>Message response</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Products.ProductRepository.setProductStatus(System.String,System.String,System.String)">
+            <summary>
+            Update product status
+            </summary>
+            <param name="idbranch">code of product</param>
+            <param name="flag">status value to change</param>
+            <returns>Message response</returns>
+        </member>
         <member name="P:Viam.SalesForce.API.Helper.AppSettings.SecretKey">
             <summary>
             Key to generate the token access.
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Helper.AppSettings.ApiUser">
+            <summary>
+            User name 
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Chain.ChainModel.idChain">
@@ -674,7 +825,27 @@
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mgpCurrentWeek">
             <summary>
-            
+            Gross profit by transaction in current week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mgpLastWeek">
+            <summary>
+            Gross profit by transaction in last week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mgpToday">
+            <summary>
+            Gross profit by transaction today
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mgpSamedayLw">
+            <summary>
+            Gross profit by transaction in same day of week
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.mgpYesterday">
+            <summary>
+            Gross profit by transaction yesterday
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.amountCurrentWeek">
@@ -770,6 +941,51 @@
         <member name="P:Viam.SalesForce.API.Model.Locations.MainBranchModel.flagGrupo">
             <summary>
             Flag to indicate status (A:Active C:Closed I:Inactive)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.idLocation">
+            <summary>
+            Location Code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.idPayer">
+            <summary>
+            Code of payer
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.namePayer">
+            <summary>
+            Payer Name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.IdCountry">
+            <summary>
+            Country code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.nameCountry">
+            <summary>
+            Country name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.currentRate">
+            <summary>
+            rate value 
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.currentCostRate">
+            <summary>
+            Cost rate vlaue
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.currentSpread">
+            <summary>
+            Spread value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.RateModel.dateInsert">
+            <summary>
+            Date to indicate since when is requeted data
             </summary>
         </member>
         <member name="T:Viam.SalesForce.API.Model.Locations.ResumeData">
@@ -1000,6 +1216,16 @@
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeDataToday.fxLevelMajorPayer">
             <summary>
             Forex level major payer
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.UserModel.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.User.UserModel.Password">
+            <summary>
+            Access key
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.User.Usuario.Login">
