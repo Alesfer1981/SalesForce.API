@@ -52,22 +52,15 @@ namespace Viam.SalesForce.API.Controllers.Users
         }
 
         /// <summary>
-        /// Method to API access.
+        /// Method to get the API access.
         /// <remarks>
-        /// Sample request:
-        ///
-        ///     POST /Todo
-        ///     {
-        ///         userName:"userValue",
-        ///	        password:"passwordValue"
-        ///     }
-        ///
-        /// </remarks>
-        /// <param name="userModel"></param>
+        /// <param name="UserName">User Name</param>
+        /// <param name="Password">Access Key</param>
+        /// <param name="userModel">Contains user credentials settings</param>
         /// <returns>Token authetication</returns>
         [HttpPost]
         [Route("login")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Authenticate([FromBody] UserModel userModel)
         {
             if (!ModelState.IsValid)
