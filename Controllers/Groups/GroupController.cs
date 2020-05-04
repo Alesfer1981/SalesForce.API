@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using Viam.SalesForce.API.Business.Groups;
 using Viam.SalesForce.API.Business.Locations;
 using Viam.SalesForce.API.Model.Configuration;
+using Viam.SalesForce.API.Model.Groups;
 using Viam.SalesForce.API.Model.Locations;
 
 namespace Viam.SalesForce.API.Controllers.Groups
@@ -55,7 +56,7 @@ namespace Viam.SalesForce.API.Controllers.Groups
         /// <returns>List of branches</returns>
         [HttpGet]
         [Route("branch")]
-        public ActionResult<List<MainBranchModel>> getMainBranchList(string idLocation)
+        public ActionResult<List<MainBranchModel>> getMainBranchList([FromQuery] string idLocation)
         {
             try
             {
@@ -64,6 +65,26 @@ namespace Viam.SalesForce.API.Controllers.Groups
             catch (Exception ex)
             {
                 _logger.LogError($"GroupController - metodo getMainBranchList API branch, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Update credit of group branch
+        /// </summary>
+        /// <param name="salesFUpdateCreditParam">salesFUpdateCreditParam object</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("credit")]
+        public ActionResult<string> updateCredit([FromBody] SalesFUpdateCreditParam salesFUpdateCreditParam)
+        {
+            try
+            {
+                return _groupBusiness.updateCredit(salesFUpdateCreditParam);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"GroupController - metodo updateCredit API credit, exception: { ex.Message} stack trace : {ex.StackTrace}");
                 return BadRequest(ex.Message.ToString());
             }
         }
