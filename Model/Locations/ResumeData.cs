@@ -378,5 +378,34 @@ namespace Viam.SalesForce.API.Model.Locations
             get { return highWaterMark; }
             set { highWaterMark = value.Trim(); }
         }
+
+        public string mtdCountBillPay { get; set; }
+        private string MTD_COUNT_VIABILLPAY
+        {
+            get { return mtdCountBillPay; }
+            set { mtdCountBillPay = value.Trim(); }
+        }
+
+        public string avgCountViaBillPay { get; set; }
+        private string AVG_COUNT_VIABILLPAY
+        {
+            get { return avgCountViaBillPay; }
+            set { avgCountViaBillPay = value.Trim(); }
+        }
+
+        public string todayCountViaBillPay { get; set; }
+        private string TODAY_COUNT_VIABILLPAY
+        {
+            get { return todayCountViaBillPay; }
+            set { todayCountViaBillPay = value.Trim(); }
+        }
+
+        public string todayAmountViaBillPay { get; set; }
+        private string TODAY_AMOUNT_VIABILLPAY
+        {
+            get { return todayAmountViaBillPay; }
+            set { todayAmountViaBillPay = value.Trim(); }
+        }
+
     }
 }
