@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Viam.SalesForce.API.Data.Groups;
 using Viam.SalesForce.API.Model.Configuration;
+using Viam.SalesForce.API.Model.Groups;
 using Viam.SalesForce.API.Model.Locations;
 
 namespace Viam.SalesForce.API.Business.Groups
@@ -21,6 +22,11 @@ namespace Viam.SalesForce.API.Business.Groups
         public ActionResult<List<MainBranchModel>> getMainBranchList(string idLocation)
         {
             return _envioReadRepository.getMainBranchList(idLocation);
+        }
+
+        public ActionResult<string> updateCredit(SalesFUpdateCreditParam salesFUpdateCreditParam)
+        {
+            return _envioReadRepository.updateCredit(salesFUpdateCreditParam);
         }
     }
 }
