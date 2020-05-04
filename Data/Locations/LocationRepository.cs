@@ -59,7 +59,7 @@ namespace Viam.SalesForce.API.Data.Locations
         /// <param name="idLocation">Location code</param>
         /// <param name="measure">Date update</param>
         /// <returns></returns>
-        public ActionResult<List<ResumeData>> getResumeData(string idLocation, int measure)
+        public ActionResult<List<ResumeData>> getResumeData(string idLocation, string idSalesRep)
         {
             using (IDbConnection dbConnection = Connection)
             {
@@ -67,7 +67,7 @@ namespace Viam.SalesForce.API.Data.Locations
 
                 var p = new DynamicParameters();
                 p.Add("@IdLocation", idLocation);
-                p.Add("@Measure", measure);
+                p.Add("@IdSalesRep", idSalesRep);
 
                 var query = dbConnection.Query<ResumeData>(Constants.spGetSalesfResumeData,
                                                            p,
@@ -76,6 +76,11 @@ namespace Viam.SalesForce.API.Data.Locations
             }
         }
 
+        /// <summary>
+        /// Report of data at today date
+        /// </summary>
+        /// <param name="idLocation">Code of location</param>
+        /// <returns>List of resume data today</returns>
         public ActionResult<List<ResumeDataToday>> getResumeDataToday(string idLocation)
         {
             using (IDbConnection dbConnection = Connection)
@@ -92,6 +97,68 @@ namespace Viam.SalesForce.API.Data.Locations
             }
         }
 
-        
+        /// <summary>
+        /// Set status a group of locations
+        /// </summary>
+        /// <param name="idLocationList">List of locations codes separated by comma</param>
+        /// <param name="value">Value to set synchronize column</param>
+        /// <returns>Confirm operation</returns>
+        public ActionResult<string> setSynchronized(string idLocationList, string value)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@IDS_LOCATION", idLocationList);
+                p.Add("@SYNCHRONIZE", value);
+
+                var query = dbConnection.Query<string>(Constants.spUpdateSalesFLocationSynchronize,
+                                                       p,
+                                                       commandType: CommandType.StoredProcedure);
+                return query.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Change status of location
+        /// </summary>
+        /// <param name="idLocation">Code of location</param>
+        /// <param name="status">status value O:open C:Closed</param>
+        /// <param name="flag">flag status A:Active I:Incative</param>
+        /// <returns>Message response</returns>
+        public ActionResult<string> setLocationStatus(string idLocation)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@ID_LOCATION", idLocation);
+
+                var query = dbConnection.Query<string>(Constants.spUpdateSalesFLocationStatus,
+                                                       p,
+                                                       commandType: CommandType.StoredProcedure);
+                return query.ToString();
+            }
+        }
+
+        public ActionResult<List<RateModel>> getCurrentRates(string idLocation, DateTime? dateFrom)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@IdLocation", idLocation);
+                p.Add("@DateFrom", dateFrom);
+
+                var query = dbConnection.Query<RateModel>(Constants.spGetSalesfCurrentRatesData,
+                                                          p,
+                                                          commandType: CommandType.StoredProcedure);
+                return query.AsList();
+            }
+        }
+
     }
 }
