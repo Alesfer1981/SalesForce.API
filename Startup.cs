@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Viam.SalesForce.API.Helper;
@@ -24,8 +25,9 @@ namespace Viam.SalesForce.API
     public class Startup
     {
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
         {
+            loggerFactory.CreateLogger(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
@@ -98,7 +100,7 @@ namespace Viam.SalesForce.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -113,7 +115,7 @@ namespace Viam.SalesForce.API
 
             app.UseAuthentication();
             app.UseMvc();
-
+            loggerFactory.AddFile(Configuration.GetSection("Logging"));
             app.UseSwagger();
             app.UseSwaggerUI(s =>
             {
