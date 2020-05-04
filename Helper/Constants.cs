@@ -20,5 +20,15 @@ namespace Viam.SalesForce.API.Helper
 
         internal const string spValidateCrmUsers = "[crm].[spValidateCrmUsers]";
 
+        internal const string spUpdateSalesFLocationStatus = "[crm].[spUpdateSalesFLocationStatus]";
+
+        internal const string spUpdateSalesFCredit = "[crm].[spUpdateSalesFCredit]";
+
+        internal const string spUpdateSalesFProductStatus = "[crm].[spUpdateSalesFProductStatus]";
+
+        internal const string spGetSalesfCurrentRatesData = "[crm].[spGetSalesfCurrentRatesData]";
+
+        internal const string spUpdateSalesFLocationSynchronize = "[crm].[spUpdateSalesFLocationSynchronize]";
+
     }
 }
