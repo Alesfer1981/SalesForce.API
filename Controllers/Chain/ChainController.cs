@@ -40,10 +40,12 @@ namespace Viam.SalesForce.API.Controllers.Chain
         /// constructor
         /// </summary>
         /// <param name="configuration">configuration object<</param>
-        public ChainController(IOptions<ConfigurationModel> configuration)
+        /// <param name="logger">loggin object</param>
+        public ChainController(IOptions<ConfigurationModel> configuration, ILogger<ChainController> logger)
         {
             _configurations = configuration;
             _chainBusiness = new ChainBusiness(_configurations.Value);
+            _logger = logger;
         }
 
         /// <summary>
