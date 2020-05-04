@@ -13,8 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Business\Products\" />
-    <Folder Include="Controllers\Products\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
