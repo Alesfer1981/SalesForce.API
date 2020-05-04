@@ -19,9 +19,9 @@ namespace Viam.SalesForce.API.Business.Locations
             _envioReadRepository = new LocationRepository(configuration.EnvioRead);
         }
 
-        public ActionResult<List<ResumeData>> getResumeData(string idlocation, int measure)
+        public ActionResult<List<ResumeData>> getResumeData(string idlocation, string idSalesRep)
         {
-            return _envioReadRepository.getResumeData(idlocation, measure);
+            return _envioReadRepository.getResumeData(idlocation, idSalesRep);
         }
 
         public ActionResult<List<LocationModel>> getLocations(string idlocation, string synchronize)
@@ -34,6 +34,19 @@ namespace Viam.SalesForce.API.Business.Locations
             return _envioReadRepository.getResumeDataToday(idlocation);
         }
 
-        
+        public ActionResult<string> setSynchronized(string idLocationList, string value)
+        {
+            return _envioReadRepository.setSynchronized(idLocationList, value);
+        }
+
+        public ActionResult<string> setLocationStatus(string idLocation)
+        {
+            return _envioReadRepository.setLocationStatus(idLocation);
+        }
+
+        public ActionResult<List<RateModel>> getCurrentRates(string idLocation, DateTime? dateFrom)
+        {
+            return _envioReadRepository.getCurrentRates(idLocation, dateFrom);
+        }
     }
 }
