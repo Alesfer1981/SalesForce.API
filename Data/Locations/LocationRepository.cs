@@ -143,6 +143,12 @@ namespace Viam.SalesForce.API.Data.Locations
             }
         }
 
+        /// <summary>
+        /// Get the current rates values
+        /// </summary>
+        /// <param name="idLocation">Locatio code</param>
+        /// <param name="dateFrom">date from request data</param>
+        /// <returns>Rate model list objects</returns>
         public ActionResult<List<RateModel>> getCurrentRates(string idLocation, DateTime? dateFrom)
         {
             using (IDbConnection dbConnection = Connection)
@@ -160,5 +166,27 @@ namespace Viam.SalesForce.API.Data.Locations
             }
         }
 
+        /// <summary>
+        /// Update the sales force code
+        /// </summary>
+        /// <param name="idLocation">Location Code</param>
+        /// <param name="idSalesForce">Sales force Code</param>
+        /// <returns></returns>
+        public ActionResult<string> setSalesFId(string idLocation, string idSalesForce)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@ID_LOCATION", idLocation);
+                p.Add("@ID_SALESFORCE", idSalesForce);
+
+                var query = dbConnection.Query<string>(Constants.spSetSalesFId,
+                                                       p,
+                                                       commandType: CommandType.StoredProcedure);
+                return query.ToString();
+            }
+        }
     }
 }
