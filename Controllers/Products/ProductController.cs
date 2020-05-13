@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Viam.SalesForce.API.Business.Products;
 using Viam.SalesForce.API.Model.Configuration;
+using Viam.SalesForce.API.Model.Products;
 
 namespace Viam.SalesForce.API.Controllers.Products
 {
@@ -59,6 +60,66 @@ namespace Viam.SalesForce.API.Controllers.Products
             catch (Exception ex)
             {
                 _logger.LogError($"ProductController - metodo setProductStatus API status, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Save a new product
+        /// </summary>
+        /// <param name="newProductParams">Contains the attributes to save a new product</param>
+        /// <returns>Data of new product inserted</returns>
+        [HttpPost]
+        [Route("add")]
+        public ActionResult<NewProductParams> addNewProduct(NewProductParams newProductParams)
+        {
+            try
+            {
+                return _productBusiness.addNewProduct(newProductParams);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ProductController - metodo addNewProduct API add, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Find a product by code
+        /// </summary>
+        /// <param name="idBranch">Code of the product</param>
+        /// <returns>Data of product</returns>
+        [HttpGet]
+        [Route("get")]
+        public ActionResult<ProductModel> getProduct(string idBranch)
+        {
+            try
+            {
+                return _productBusiness.getProduct(idBranch);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ProductController - metodo getProduct API get, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Update a product data
+        /// </summary>
+        /// <param name="productModel"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("update")]
+        public ActionResult<ProductModel> updateProduct(ProductModel productModel)
+        {
+            try
+            {
+                return _productBusiness.updateProduct(productModel);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ProductController - metodo updateProduct API update, exception: { ex.Message} stack trace : {ex.StackTrace}");
                 return BadRequest(ex.Message.ToString());
             }
         }
