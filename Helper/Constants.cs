@@ -30,5 +30,13 @@ namespace Viam.SalesForce.API.Helper
 
         internal const string spUpdateSalesFLocationSynchronize = "[crm].[spUpdateSalesFLocationSynchronize]";
 
+        internal const string spAddSalesFNewProduct = "[crm].[spAddSalesFNewProduct]";
+
+        internal const string spGetSalesFProduct = "[crm].[spGetSalesFProduct]";
+
+        internal const string spUpdateSalesFProduct = "[crm].[spUpdateSalesFProduct]";
+
+        internal const string spSetSalesFId = "[crm].[spSetSalesFId]";
+
     }
 }
