@@ -52,7 +52,7 @@ namespace Viam.SalesForce.API.Controllers.Locations
         /// Get a list of locations
         /// </summary>
         /// <param name="idLocation">Code of location</param>
-        /// <param name="synchronize">Flag to indicate if is upated or not 1:updated 0:not updated</param>
+        /// <param name="synchronize">Flag to indicate if the location was upated or not 1:updated 0:not updated</param>
         /// <returns>List of locations</returns>
         [HttpGet]
         [Route("location")]
@@ -184,6 +184,26 @@ namespace Viam.SalesForce.API.Controllers.Locations
             }
         }
 
+        /// <summary>
+        /// Update Sales Force identifier
+        /// </summary>
+        /// <param name="idLocation">Location Code</param>
+        /// <param name="idSalesForce">Sales Force Code</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("salesForceId")]
+        public ActionResult<string> setSalesFId(string idLocation, string idSalesForce)
+        {
+            try
+            {
+                return _locationBusiness.setSalesFId(idLocation, idSalesForce);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"LocationController - metodo setSalesFId API salesId, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
 
         /// <summary>
         /// Test conection
