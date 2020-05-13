@@ -48,5 +48,11 @@ namespace Viam.SalesForce.API.Business.Locations
         {
             return _envioReadRepository.getCurrentRates(idLocation, dateFrom);
         }
+
+        public ActionResult<string> setSalesFId(string idLocation, string idSalesForce)
+        {
+            return _envioReadRepository.setSalesFId(idLocation, idSalesForce);
+        }
+
     }
 }
