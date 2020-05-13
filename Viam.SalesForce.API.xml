@@ -29,7 +29,7 @@
             <summary>
             List of chain codes
             </summary>
-            <param name="filter">conditional parameter to filter information, min 3 characters</param>
+            <param name="filter">conditional parameter to filter information, name or code min 3 characters</param>
             <returns>A list of chain codes</returns>
         </member>
         <member name="T:Viam.SalesForce.API.Controllers.Groups.GroupController">
@@ -105,7 +105,7 @@
             Get a list of locations
             </summary>
             <param name="idLocation">Code of location</param>
-            <param name="synchronize">Flag to indicate if is upated or not 1:updated 0:not updated</param>
+            <param name="synchronize">Flag to indicate if the location was upated or not 1:updated 0:not updated</param>
             <returns>List of locations</returns>
         </member>
         <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.String)">
@@ -146,6 +146,14 @@
             <param name="dateFrom"></param>
             <returns></returns>
         </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.setSalesFId(System.String,System.String)">
+            <summary>
+            Update Sales Force identifier
+            </summary>
+            <param name="idLocation">Location Code</param>
+            <param name="idSalesForce">Sales Force Code</param>
+            <returns></returns>
+        </member>
         <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.EchoPingAPI">
             <summary>
             Test conection
@@ -179,6 +187,27 @@
             <param name="idbranch">code of product</param>
             <param name="flag">status value to change</param>
             <returns>Message response</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Products.ProductController.addNewProduct(Viam.SalesForce.API.Model.Products.NewProductParams)">
+            <summary>
+            Save a new product
+            </summary>
+            <param name="newProductParams">Contains the attributes to save a new product</param>
+            <returns>Data of new product inserted</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Products.ProductController.getProduct(System.String)">
+            <summary>
+            Find a product by code
+            </summary>
+            <param name="idBranch">Code of the product</param>
+            <returns>Data of product</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Products.ProductController.updateProduct(Viam.SalesForce.API.Model.Products.ProductModel)">
+            <summary>
+            Update a product data
+            </summary>
+            <param name="productModel"></param>
+            <returns></returns>
         </member>
         <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._logger">
             <summary>
@@ -255,6 +284,22 @@
             <param name="flag">flag status A:Active I:Incative</param>
             <returns>Message response</returns>
         </member>
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.getCurrentRates(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Get the current rates values
+            </summary>
+            <param name="idLocation">Locatio code</param>
+            <param name="dateFrom">date from request data</param>
+            <returns>Rate model list objects</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Locations.LocationRepository.setSalesFId(System.String,System.String)">
+            <summary>
+            Update the sales force code
+            </summary>
+            <param name="idLocation">Location Code</param>
+            <param name="idSalesForce">Sales force Code</param>
+            <returns></returns>
+        </member>
         <member name="M:Viam.SalesForce.API.Data.Products.ProductRepository.setProductStatus(System.String,System.String,System.String)">
             <summary>
             Update product status
@@ -262,6 +307,20 @@
             <param name="idbranch">code of product</param>
             <param name="flag">status value to change</param>
             <returns>Message response</returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Products.ProductRepository.addNewProduct(Viam.SalesForce.API.Model.Products.NewProductParams)">
+            <summary>
+            Add a new product
+            </summary>
+            <param name="newProductParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Products.ProductRepository.updateProduct(Viam.SalesForce.API.Model.Products.ProductModel)">
+            <summary>
+            
+            </summary>
+            <param name="productModel"></param>
+            <returns></returns>
         </member>
         <member name="P:Viam.SalesForce.API.Helper.AppSettings.SecretKey">
             <summary>
@@ -298,6 +357,36 @@
             Respresentative name that belong to the chain
             </summary>
         </member>
+        <member name="P:Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam.idMainBranch">
+            <summary>
+            Branch Code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam.debtLimit">
+            <summary>
+            Value of debit limit branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam.debtLimitWknd">
+            <summary>
+            Value of debit limit branch on Weekend
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam.idPhase">
+            <summary>
+            Code of actual branch phase
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam.debtLimitMo">
+            <summary>
+            Value of debit limit Monthly
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Groups.SalesFUpdateCreditParam.debtLimitWkndMo">
+            <summary>
+            Value of debit limit Monthly
+            </summary>
+        </member>
         <member name="T:Viam.SalesForce.API.Model.Locations.LocationModel">
             <summary>
             Location object to store data
@@ -325,12 +414,12 @@
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.creationDate">
             <summary>
-            Creation date of location
+            Creation date of location (YYYY-mm-DD)
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.daysOpen">
             <summary>
-            Quantity of days open
+            Total days open
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.companyName">
@@ -1141,6 +1230,26 @@
         <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.highWaterMark">
             <summary>
             Hight water mark of location
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.mtdCountBillPay">
+            <summary>
+            Month to date billPayment transactions
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.avgCountViaBillPay">
+            <summary>
+            Average transactions in BillPayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayCountViaBillPay">
+            <summary>
+            Today count transactions in BillPayment app
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.ResumeData.todayAmountViaBillPay">
+            <summary>
+            Amount value for transactions in BillPayment app
             </summary>
         </member>
         <member name="T:Viam.SalesForce.API.Model.Locations.ResumeDataToday">
