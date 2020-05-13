@@ -131,7 +131,7 @@ namespace Viam.SalesForce.API.Services
                     new Claim("Fname", usuario.Fname),
                     new Claim("Lname", usuario.Lname)
                         },
-                expires: DateTime.Now.AddMinutes(120), signingCredentials: credentials);
+                expires: DateTime.Now.AddDays(1), signingCredentials: credentials);
                 usuario.Token = new JwtSecurityTokenHandler().WriteToken(token);
 
             }
