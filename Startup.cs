@@ -68,7 +68,7 @@ namespace Viam.SalesForce.API
             });
 
             // configure strongly typed settings objects
-            var appSettingsSection = Configuration.GetSection("AppSettings");
+            var appSettingsSection = Configuration.GetSection("Settings");
             services.Configure<AppSettings>(appSettingsSection);
 
             // configure jwt authentication
