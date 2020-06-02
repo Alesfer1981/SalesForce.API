@@ -19,12 +19,12 @@ namespace Viam.SalesForce.API.Business.Locations
             _envioReadRepository = new LocationRepository(configuration.EnvioRead);
         }
 
-        public ActionResult<List<ResumeData>> getResumeData(string idlocation, string idSalesRep)
+        public List<ResumeData> getResumeData(string idlocation, string idSalesRep)
         {
             return _envioReadRepository.getResumeData(idlocation, idSalesRep);
         }
 
-        public ActionResult<List<LocationModel>> getLocations(string idlocation, string synchronize)
+        public List<LocationModel> getLocations(string idlocation, string synchronize)
         {
             return _envioReadRepository.getLocations(idlocation, synchronize);
         }
