@@ -57,12 +57,22 @@ namespace Viam.SalesForce.API.Controllers.Locations
         [HttpGet]
         [Route("location")]
         public ActionResult<List<LocationModel>> getLocations([FromQuery] string idLocation,
-                                                                          string synchronize)
+                                                                          string synchronize,
+                                                                          int? pageNumber,
+                                                                          int? pageSize)
         {
             try
             {
                 //throw new Exception("force exception");
-                return _locationBusiness.getLocations(idLocation, synchronize);
+                List<LocationModel> lstLocations = _locationBusiness.getLocations(idLocation, synchronize);
+
+                int currentPage = pageNumber ?? 1;
+                int currentPageSize = pageSize ?? lstLocations.Count();
+
+                lstLocations = lstLocations.Skip((currentPage - 1) * currentPageSize).Take(currentPageSize).ToList();
+
+                return lstLocations;
+
             }
             catch (Exception ex)
             {
@@ -80,11 +90,20 @@ namespace Viam.SalesForce.API.Controllers.Locations
         [HttpGet]
         [Route("resume")]
         public ActionResult<List<ResumeData>> getResumeData([FromQuery] string idLocation,
-                                                                        string idSalesRep)
+                                                                        string idSalesRep,
+                                                                        int? pageNumber,
+                                                                        int? pageSize)
         {
             try
             {
-                return _locationBusiness.getResumeData(idLocation, idSalesRep);
+                List<ResumeData> lstResumeData = _locationBusiness.getResumeData(idLocation, idSalesRep);
+
+                int currentPage = pageNumber ?? 1;
+                int currentPageSize = pageSize ?? lstResumeData.Count();
+
+                lstResumeData = lstResumeData.Skip((currentPage - 1) * currentPageSize).Take(currentPageSize).ToList();
+
+                return lstResumeData;
             }
             catch (Exception ex)
             {
