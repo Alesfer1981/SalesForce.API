@@ -191,5 +191,29 @@ namespace Viam.SalesForce.API.Data.Products
                 return query.FirstOrDefault();
             }
         }
+
+        /// <summary>
+        /// Method to get a Kpis list
+        /// </summary>
+        /// <param name="name">name product</param>
+        /// <param name="idProduct">code product</param>
+        /// <returns>kpis list</returns>
+        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+
+                p.Add("@NAME", name);
+                p.Add("@IDPRODUCT", idProduct);
+
+                var query = dbConnection.Query<KpisModel>(Helper.Constants.spGetSalesfKpi,
+                                                          p,
+                                                          commandType: CommandType.StoredProcedure);
+                return query.AsList();
+            }
+        }
     }
 }
