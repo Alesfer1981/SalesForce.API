@@ -208,5 +208,9 @@ namespace Viam.SalesForce.API.Business.Products
             return differences;
         }
 
+        public ActionResult<List<KpisModel>> getKpis(string name , string idProduct)
+        {
+            return _envioReadRepository.getKpis(name, idProduct);
+        }
     }
 }
