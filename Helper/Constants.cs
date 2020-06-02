@@ -38,5 +38,7 @@ namespace Viam.SalesForce.API.Helper
 
         internal const string spSetSalesFId = "[crm].[spSetSalesFId]";
 
+        internal const string spGetSalesfKpi = "[crm].[spGetSalesfKpi]" ;
+
     }
 }
