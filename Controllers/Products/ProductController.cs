@@ -123,5 +123,27 @@ namespace Viam.SalesForce.API.Controllers.Products
                 return BadRequest(ex.Message.ToString());
             }
         }
+
+
+        /// <summary>
+        /// Get a KPIs list 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="idProduct"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("kpis")]
+        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct)
+        {
+            try
+            {
+                return _productBusiness.getKpis(name, idProduct);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ProductController - metodo getKpis API kpis, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
     }
 }
