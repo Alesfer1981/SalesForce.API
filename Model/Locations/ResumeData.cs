@@ -379,6 +379,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { highWaterMark = value.Trim(); }
         }
 
+        /// <summary>
+        /// Month to date billPayment transactions
+        /// </summary>
         public string mtdCountBillPay { get; set; }
         private string MTD_COUNT_VIABILLPAY
         {
@@ -386,6 +389,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { mtdCountBillPay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Average transactions in BillPayment app
+        /// </summary>
         public string avgCountViaBillPay { get; set; }
         private string AVG_COUNT_VIABILLPAY
         {
@@ -393,6 +399,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { avgCountViaBillPay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Today count transactions in BillPayment app
+        /// </summary>
         public string todayCountViaBillPay { get; set; }
         private string TODAY_COUNT_VIABILLPAY
         {
@@ -400,6 +409,9 @@ namespace Viam.SalesForce.API.Model.Locations
             set { todayCountViaBillPay = value.Trim(); }
         }
 
+        /// <summary>
+        /// Amount value for transactions in BillPayment app
+        /// </summary>
         public string todayAmountViaBillPay { get; set; }
         private string TODAY_AMOUNT_VIABILLPAY
         {
