@@ -34,7 +34,7 @@ namespace Viam.SalesForce.API.Data.Locations
         /// <param name="idLocation">Location indentifier</param>
         /// <param name="synchronize"></param>
         /// <returns></returns>
-        public ActionResult<List<LocationModel>> getLocations(string idLocation, string synchronize)
+        public List<LocationModel> getLocations(string idLocation, string synchronize)
         {
             using (IDbConnection dbConnection = Connection)
             {
@@ -59,7 +59,7 @@ namespace Viam.SalesForce.API.Data.Locations
         /// <param name="idLocation">Location code</param>
         /// <param name="measure">Date update</param>
         /// <returns></returns>
-        public ActionResult<List<ResumeData>> getResumeData(string idLocation, string idSalesRep)
+        public List<ResumeData> getResumeData(string idLocation, string idSalesRep)
         {
             using (IDbConnection dbConnection = Connection)
             {
@@ -139,7 +139,10 @@ namespace Viam.SalesForce.API.Data.Locations
                 var query = dbConnection.Query<string>(Constants.spUpdateSalesFLocationStatus,
                                                        p,
                                                        commandType: CommandType.StoredProcedure);
-                return query.ToString();
+                if (query.Count() > 0)
+                    return "OK";
+                else
+                    return "Error";
             }
         }
 
