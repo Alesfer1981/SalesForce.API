@@ -25,6 +25,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Code of the company group
         /// </summary>
+        [StringLength(9)]
         public string idGroupCompany { get; set; }
         private string ID_GROUP_COMPANY
         {
@@ -53,7 +54,7 @@ namespace Viam.SalesForce.API.Model.Locations
         //}
 
         /// <summary>
-        /// Creation date of location
+        /// Creation date of location (YYYY-mm-DD)
         /// </summary>
         [Timestamp]
         public string creationDate { get; set; }
@@ -64,8 +65,9 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
         /// <summary>
-        /// Quantity of days open
+        /// Total days open
         /// </summary>
+        [Required]
         public string daysOpen { get; set; }
         private string DAYS_OPEN
         {
@@ -76,6 +78,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Company Name
         /// </summary>
+        [Required, StringLength(40)]
         public string companyName { get; set; }
         private string COMPANY_NAME
         {
@@ -86,6 +89,7 @@ namespace Viam.SalesForce.API.Model.Locations
         /// <summary>
         /// Group of company
         /// </summary>
+        [StringLength(40)]
         public string groupCompany { get; set; }
         private string GROUP_COMPANY
         {
@@ -842,6 +846,26 @@ namespace Viam.SalesForce.API.Model.Locations
         //    get { return available; }
         //    set { available = value.Trim(); }
         //}
+
+        /// <summary>
+        /// Phase code
+        /// </summary>
+        public int idPhase { get; set; }
+        private int ID_PHASE
+        {
+            get { return idPhase; }
+            set { idPhase = value; }
+        }
+
+        /// <summary>
+        /// Phase description
+        /// </summary>
+        public string phaseDescription { get; set; }
+        private string PHASE_DESCRIPTION
+        {
+            get { return phaseDescription; }
+            set { phaseDescription = value.Trim(); }
+        }
 
         /// <summary>
         /// Financial Status, internal classification
