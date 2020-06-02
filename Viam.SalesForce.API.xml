@@ -100,7 +100,7 @@
             <param name="configuration">configuration object</param>
             <param name="logger">loggin object</param>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getLocations(System.String,System.String)">
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getLocations(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Get a list of locations
             </summary>
@@ -108,7 +108,7 @@
             <param name="synchronize">Flag to indicate if the location was upated or not 1:updated 0:not updated</param>
             <returns>List of locations</returns>
         </member>
-        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.String)">
+        <member name="M:Viam.SalesForce.API.Controllers.Locations.LocationController.getResumeData(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Report of resume data
             </summary>
@@ -207,6 +207,14 @@
             Update a product data
             </summary>
             <param name="productModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Controllers.Products.ProductController.getKpis(System.String,System.String)">
+            <summary>
+            Get a KPIs list 
+            </summary>
+            <param name="name"></param>
+            <param name="idProduct"></param>
             <returns></returns>
         </member>
         <member name="F:Viam.SalesForce.API.Controllers.Users.UsersController._logger">
@@ -321,6 +329,14 @@
             </summary>
             <param name="productModel"></param>
             <returns></returns>
+        </member>
+        <member name="M:Viam.SalesForce.API.Data.Products.ProductRepository.getKpis(System.String,System.String)">
+            <summary>
+            Method to get a Kpis list
+            </summary>
+            <param name="name">name product</param>
+            <param name="idProduct">code product</param>
+            <returns>kpis list</returns>
         </member>
         <member name="P:Viam.SalesForce.API.Helper.AppSettings.SecretKey">
             <summary>
@@ -805,6 +821,16 @@
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.available">
             <summary>
             Available amount
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.idPhase">
+            <summary>
+            Phase code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.phaseDescription">
+            <summary>
+            Phase description
             </summary>
         </member>
         <member name="P:Viam.SalesForce.API.Model.Locations.LocationModel.finStatus">
@@ -1327,6 +1353,431 @@
             Forex level major payer
             </summary>
         </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.id">
+            <summary>
+            code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.idProduct">
+            <summary>
+            Product code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.idLocation">
+            <summary>
+            Location code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.payer">
+            <summary>
+            Payer
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.user">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.date">
+            <summary>
+            Date
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.hour">
+            <summary>
+            Hour
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.KpisModel.value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idCompany">
+            <summary>
+            Company Code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.nameBranch">
+            <summary>
+            Agency name
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.addressBranch">
+            <summary>
+            Agency Address
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idCity">
+            <summary>
+            City Code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idMainBranch">
+            <summary>
+            Code of main branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idFlagBranch">
+            <summary>
+            Flag Agency (I:Inactive - A: Active)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idTypeBranch">
+            <summary>
+            Type of agency, (P: Payee - R: Agent - A: Both)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.phone1Branch">
+            <summary>
+            Agency Phone number 1
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.phone2Branch">
+            <summary>
+            Agency Phone number 2
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.faxBranch">
+            <summary>
+            Agency Fax
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.dateCreateBranch">
+            <summary>
+            date of creation branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.zipBranch">
+            <summary>
+            Agency Zip code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.currencyPayBranch">
+            <summary>
+            Agency currency for payments (N: National Currency - D:Dollar)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idStatusBranch">
+            <summary>
+            Branch status (O: Open - C: Close)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.statusComment">
+            <summary>
+            Last comment about agency status
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.businessHours">
+            <summary>
+            Agency Schedule for customers 
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.latitud">
+            <summary>
+            Location latitud value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.longitud">
+            <summary>
+            Location longitud value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.geoPrecision">
+            <summary>
+            Geo precision value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idLocation">
+            <summary>
+            Location code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idChain">
+            <summary>
+            Chain code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.redPhone">
+            <summary>
+            Value to validate if redphone app is installed 
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.dateOpen">
+            <summary>
+            Date open
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.nameMainBranch">
+            <summary>
+            Name main branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.dateCreateMainBranch">
+            <summary>
+            Date create main branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.emailBusiness">
+            <summary>
+            Email address for business
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.emailOwner">
+            <summary>
+            Owner email address 
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.paymentMethod1">
+            <summary>
+            Payment method alternative 1 (c: bank deposit p:cash pick up)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.paymentMethod2">
+            <summary>
+            Payment method alternative 2 (c: bank deposit p:cash pick up)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.finSchedule">
+            <summary>
+            Financial schedule value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.emailOperations">
+            <summary>
+            Operations area email address
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.finYearlyInterestRate">
+            <summary>
+            Financial yearly interest rate
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.finStatusComments">
+            <summary>
+            Financial status last comments
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.creditGrade">
+            <summary>
+            Credit grade
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.depositBank">
+            <summary>
+            Bank deposit
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.idSalesForce">
+            <summary>
+            SalesForce code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.NewProductParams.nameAgent">
+            <summary>
+            Name of Agent
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idBranch">
+            <summary>
+            Branch code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idCompany">
+            <summary>
+            Company code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.nameBranch">
+            <summary>
+            Name branch for accounting purposes
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.addressBranch">
+            <summary>
+             Branch address
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idCity">
+            <summary>
+            City code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idMainBranch">
+            <summary>
+            Code of main branch for accounting purposes
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idFlagBranch">
+            <summary>
+            Flag branch code (O :open C: closed)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idTypeBranch">
+            <summary>
+            code type branch (P:Payee R:Agent A:Both)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.phone1Branch">
+            <summary>
+            Agency Phone number 1
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.phone2Branch">
+            <summary>
+            Agency Phone number 2
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.faxBranch">
+            <summary>
+            Agency Fax
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.dateCreateBranch">
+            <summary>
+            date of creation branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.zipBranch">
+            <summary>
+            Agency Zip code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.currencyPayBranch">
+            <summary>
+            Agency currency for payments (N: National Currency - D:Dollar)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idStatusBranch">
+            <summary>
+            Branch status (O: Open - C: Close)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.statusComment">
+            <summary>
+            Last comment about agency status
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.businessHours">
+            <summary>
+            Agency Schedule for customers
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.latitud">
+            <summary>
+            Location latitud value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.longitud">
+            <summary>
+            Location longitud value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.geoPrecision">
+            <summary>
+            Geo precision value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idLocation">
+            <summary>
+            Location code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idChain">
+            <summary>
+            Chain code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.redphone">
+            <summary>
+            Value to validate if redphone app is installed
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.dateOpen">
+            <summary>
+            Date open
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.nameMainBranch">
+            <summary>
+            Name main branch
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.dateCreaMainOpen">
+            <summary>
+            Date create main branch open
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.emailBusiness">
+            <summary>
+            Email address for business
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.emailOwner">
+            <summary>
+            Owner email address
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.paymentMethod1">
+            <summary>
+            Payment method alternative 1 (c:bank deposit  p: cash pick up)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.paymentMethod2">
+            <summary>
+            Payment method alternative 2 (c: bank deposit p:cash pick up)
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.finSchedule">
+            <summary>
+            Financial schedule value
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.emailOperations">
+            <summary>
+            Operations area email address
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.finYearlyInterestRate">
+            <summary>
+            Financial yearly interest rate
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.finStatusComments">
+            <summary>
+            Financial status last comments
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.creditGrade">
+            <summary>
+            Credit grade
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.depositBank">
+            <summary>
+            Bank deposit
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.idSalesForce">
+            <summary>
+            SalesForce code
+            </summary>
+        </member>
+        <member name="P:Viam.SalesForce.API.Model.Products.ProductModel.nameAgent">
+            <summary>
+            Name of agent
+            </summary>
+        </member>
         <member name="P:Viam.SalesForce.API.Model.User.UserModel.UserName">
             <summary>
             User Name
@@ -1387,7 +1838,7 @@
             Interface to log management
             </summary>
         </member>
-        <member name="M:Viam.SalesForce.API.Services.UserService.#ctor(Viam.SalesForce.API.Model.Configuration.ConfigurationModel)">
+        <member name="M:Viam.SalesForce.API.Services.UserService.#ctor(Viam.SalesForce.API.Model.Configuration.ConfigurationModel,Microsoft.Extensions.Logging.ILogger{Viam.SalesForce.API.Controllers.Users.UsersController})">
             <summary>
             Constructor User Class
             </summary>
