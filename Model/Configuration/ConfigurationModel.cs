@@ -23,6 +23,12 @@ namespace Viam.SalesForce.API.Model.Configuration
             set;
         }
 
+        public string EnvioWrite
+        {
+            get;
+            set;
+        }
+
         public string SecretKey
         {
             get;
