@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Viam.SalesForce.API.Controllers.Users;
 using Viam.SalesForce.API.Helper;
 using Viam.SalesForce.API.Model.Configuration;
 using Viam.SalesForce.API.Model.User;
@@ -50,21 +51,17 @@ namespace Viam.SalesForce.API.Services
         /// <summary>
         /// Interface to log management
         /// </summary>
-        private readonly ILogger<UserService> _logger;
+        private readonly ILogger<UsersController> _logger;
 
         /// <summary>
         /// Constructor User Class
         /// </summary>
         /// <param name="appSettings">Configuration values</param>
         /// <param name="logger">Custom log object</param>
-        public UserService(ConfigurationModel configuration) //, ILogger<UserService> logger)
+        public UserService(ConfigurationModel configuration, ILogger<UsersController> logger)
         {
             _secretKey = configuration.SecretKey;
             _issuer = configuration.Issuer;
-        }
-
-        public UserService(ILogger<UserService> logger)
-        {
             _logger = logger;
         }
 
