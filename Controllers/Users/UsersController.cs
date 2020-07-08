@@ -48,7 +48,7 @@ namespace Viam.SalesForce.API.Controllers.Users
             _configurations = configuration;
             _userBusiness = new UserBusiness(_configurations.Value);
             _logger = logger;
-            _userService = new UserService(_configurations.Value);
+            _userService = new UserService(_configurations.Value, _logger);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Viam.SalesForce.API.Controllers.Users
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError($"UsersController - método Authenticate, exception: { e.Message}");
+                    _logger.LogError($"UsersController - método Authenticate, exception: { e.Message} - {e.StackTrace}");
                     //_log.LogError($"Error en UsersController, en el método Authenticate. Descripción : { e.Message }");
                     return BadRequest("Access denied");
                 }
