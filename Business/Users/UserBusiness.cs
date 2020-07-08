@@ -13,16 +13,16 @@ namespace Viam.SalesForce.API.Business.Users
     public class UserBusiness
     {
 
-        UserRepository _envioReadRepository;
+        UserRepository _envioWriteRepository;
 
         public UserBusiness(ConfigurationModel configuration)
         {
-            _envioReadRepository = new UserRepository(configuration.EnvioRead);
+            _envioWriteRepository = new UserRepository(configuration.EnvioWrite);
         }
 
         public Usuario getUserAPI(string login, string password)
         {
-            return _envioReadRepository.getUserAPI(login, password);
+            return _envioWriteRepository.getUserAPI(login, password);
         }
     }
 }
