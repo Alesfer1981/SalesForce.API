@@ -66,13 +66,20 @@ namespace Viam.SalesForce.API.Controllers.Locations
                 //throw new Exception("force exception");
                 List<LocationModel> lstLocations = _locationBusiness.getLocations(idLocation, synchronize);
 
+                List<LocationModel> lstLocationsTotal = lstLocations;
+                decimal totalRecords = lstLocations.Count();
+
                 int currentPage = pageNumber ?? 1;
                 int currentPageSize = pageSize ?? lstLocations.Count();
 
                 lstLocations = lstLocations.Skip((currentPage - 1) * currentPageSize).Take(currentPageSize).ToList();
 
-                return lstLocations;
-
+                return Json(new
+                {
+                    totalRecords = totalRecords,
+                    totalPages = Math.Ceiling(Convert.ToDouble(lstLocationsTotal.Count() / pageSize)),
+                    lstLocations = lstLocations
+                });
             }
             catch (Exception ex)
             {
@@ -98,12 +105,20 @@ namespace Viam.SalesForce.API.Controllers.Locations
             {
                 List<ResumeData> lstResumeData = _locationBusiness.getResumeData(idLocation, idSalesRep);
 
+                List<ResumeData> lstResumeDataTotal = lstResumeData;
+                decimal totalRecords = lstResumeData.Count();
+
                 int currentPage = pageNumber ?? 1;
                 int currentPageSize = pageSize ?? lstResumeData.Count();
 
                 lstResumeData = lstResumeData.Skip((currentPage - 1) * currentPageSize).Take(currentPageSize).ToList();
 
-                return lstResumeData;
+                return Json(new
+                {
+                    totalRecords = totalRecords,
+                    totalPages = Math.Ceiling(Convert.ToDouble(lstResumeDataTotal.Count() / pageSize)),
+                    lstResumeData = lstResumeData
+                });
             }
             catch (Exception ex)
             {
@@ -140,7 +155,7 @@ namespace Viam.SalesForce.API.Controllers.Locations
         /// <returns>Confirm operation</returns>
         [HttpPut]
         [Route("synch")]
-        public ActionResult<string> setSynchronized([FromQuery]string idLocationList, string value)
+        public ActionResult<string> setSynchronized([FromQuery] string idLocationList, string value)
         {
             try
             {
@@ -160,7 +175,7 @@ namespace Viam.SalesForce.API.Controllers.Locations
         /// <returns>Message response</returns>
         [HttpPut]
         [Route("locationStatus")]
-        public ActionResult<string> setLocationStatus([FromQuery]string idLocation)
+        public ActionResult<string> setLocationStatus([FromQuery] string idLocation)
         {
             try
             {
