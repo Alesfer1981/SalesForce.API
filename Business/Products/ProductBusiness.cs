@@ -13,10 +13,12 @@ namespace Viam.SalesForce.API.Business.Products
     public class ProductBusiness
     {
         ProductRepository _envioReadRepository;
+        ProductRepository _envioWriteRepository;
 
         public ProductBusiness(ConfigurationModel configuration)
         {
             _envioReadRepository = new ProductRepository(configuration.EnvioRead);
+            _envioWriteRepository = new ProductRepository(configuration.EnvioWrite);
         }
 
         public ActionResult<string> setProductStatus(string idbranch, string status, string flag)
@@ -26,7 +28,7 @@ namespace Viam.SalesForce.API.Business.Products
 
         public ActionResult<NewProductParams> addNewProduct(NewProductParams newProductParams)
         {
-            return _envioReadRepository.addNewProduct(newProductParams);
+            return _envioWriteRepository.addNewProduct(newProductParams);
         }
 
         public ActionResult<ProductModel> getProduct(string idBranch)
@@ -190,7 +192,7 @@ namespace Viam.SalesForce.API.Business.Products
                 productModelToSave.nameAgent = productModelUpdate.nameAgent;
             }
 
-            return _envioReadRepository.updateProduct(productModelToSave);
+            return _envioWriteRepository.updateProduct(productModelToSave);
         }
 
         public List<PropertyInfo> GetDifferences(ProductModel test1, ProductModel test2)
@@ -208,7 +210,7 @@ namespace Viam.SalesForce.API.Business.Products
             return differences;
         }
 
-        public ActionResult<List<KpisModel>> getKpis(string name , string idProduct)
+        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct)
         {
             return _envioReadRepository.getKpis(name, idProduct);
         }
