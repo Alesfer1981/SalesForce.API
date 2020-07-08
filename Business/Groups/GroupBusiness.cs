@@ -13,10 +13,12 @@ namespace Viam.SalesForce.API.Business.Groups
     public class GroupBusiness
     {
         GroupRepository _envioReadRepository;
+        GroupRepository _envioWriteRepository;
 
         public GroupBusiness(ConfigurationModel configuration)
         {
             _envioReadRepository = new GroupRepository(configuration.EnvioRead);
+            _envioWriteRepository = new GroupRepository(configuration.EnvioWrite);
         }
 
         public ActionResult<List<MainBranchModel>> getMainBranchList(string idLocation)
@@ -26,7 +28,7 @@ namespace Viam.SalesForce.API.Business.Groups
 
         public ActionResult<string> updateCredit(SalesFUpdateCreditParam salesFUpdateCreditParam)
         {
-            return _envioReadRepository.updateCredit(salesFUpdateCreditParam);
+            return _envioWriteRepository.updateCredit(salesFUpdateCreditParam);
         }
     }
 }
