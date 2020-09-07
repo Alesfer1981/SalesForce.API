@@ -130,14 +130,15 @@ namespace Viam.SalesForce.API.Controllers.Products
         /// </summary>
         /// <param name="name"></param>
         /// <param name="idProduct"></param>
+        /// <param name="hour"> hour to filter data</param>
         /// <returns></returns>
         [HttpGet]
         [Route("kpis")]
-        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct)
+        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct, string hour)
         {
             try
             {
-                return _productBusiness.getKpis(name, idProduct);
+                return _productBusiness.getKpis(name, idProduct, hour);
             }
             catch (Exception ex)
             {

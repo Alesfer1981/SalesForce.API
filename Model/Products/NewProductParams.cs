@@ -8,6 +8,8 @@ namespace Viam.SalesForce.API.Model.Products
 {
     public class NewProductParams
     {
+
+        public string idBranch { get; set; }
         /// <summary>
         /// Company Code
         /// </summary>

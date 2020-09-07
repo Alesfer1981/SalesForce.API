@@ -51,7 +51,7 @@ namespace Viam.SalesForce.API.Controllers.Chain
         /// <summary>
         /// List of chain codes
         /// </summary>
-        /// <param name="filter">conditional parameter to filter information, min 3 characters</param>
+        /// <param name="filter">conditional parameter to filter information, name or code min 3 characters</param>
         /// <returns>A list of chain codes</returns>
         [HttpGet]
         //[Route("chain")]

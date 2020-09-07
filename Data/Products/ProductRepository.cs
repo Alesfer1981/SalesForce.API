@@ -197,8 +197,9 @@ namespace Viam.SalesForce.API.Data.Products
         /// </summary>
         /// <param name="name">name product</param>
         /// <param name="idProduct">code product</param>
+        /// <param name="hour"> hour to filter data</param>
         /// <returns>kpis list</returns>
-        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct)
+        public ActionResult<List<KpisModel>> getKpis(string name, string idProduct, string hour)
         {
             using (IDbConnection dbConnection = Connection)
             {
@@ -208,6 +209,7 @@ namespace Viam.SalesForce.API.Data.Products
 
                 p.Add("@NAME", name);
                 p.Add("@IDPRODUCT", idProduct);
+                p.Add("@HOUR", hour);
 
                 var query = dbConnection.Query<KpisModel>(Helper.Constants.spGetSalesfKpi,
                                                           p,

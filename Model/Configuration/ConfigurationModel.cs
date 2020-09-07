@@ -29,6 +29,12 @@ namespace Viam.SalesForce.API.Model.Configuration
             set;
         }
 
+        public string EnvioDW 
+        { 
+            get; 
+            set; 
+        }
+
         public string SecretKey
         {
             get;

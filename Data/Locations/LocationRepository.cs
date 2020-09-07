@@ -59,7 +59,7 @@ namespace Viam.SalesForce.API.Data.Locations
         /// <param name="idLocation">Location code</param>
         /// <param name="measure">Date update</param>
         /// <returns></returns>
-        public List<ResumeData> getResumeData(string idLocation, string idSalesRep)
+        public List<ResumeData> getResumeData(string idLocation, int measure)
         {
             using (IDbConnection dbConnection = Connection)
             {
@@ -67,7 +67,7 @@ namespace Viam.SalesForce.API.Data.Locations
 
                 var p = new DynamicParameters();
                 p.Add("@IdLocation", idLocation);
-                p.Add("@IdSalesRep", idSalesRep);
+                p.Add("@Measure", measure);
 
                 var query = dbConnection.Query<ResumeData>(Constants.spGetSalesfResumeData,
                                                            p,

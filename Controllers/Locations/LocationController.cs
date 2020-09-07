@@ -97,13 +97,15 @@ namespace Viam.SalesForce.API.Controllers.Locations
         [HttpGet]
         [Route("resume")]
         public ActionResult<List<ResumeData>> getResumeData([FromQuery] string idLocation,
-                                                                        string idSalesRep,
+                                                                        int measure,
                                                                         int? pageNumber,
                                                                         int? pageSize)
         {
             try
             {
-                List<ResumeData> lstResumeData = _locationBusiness.getResumeData(idLocation, idSalesRep);
+                measure = string.IsNullOrEmpty(measure.ToString()) ? 0 : measure;
+
+                List<ResumeData> lstResumeData = _locationBusiness.getResumeData(idLocation, measure);
 
                 List<ResumeData> lstResumeDataTotal = lstResumeData;
                 decimal totalRecords = lstResumeData.Count();
