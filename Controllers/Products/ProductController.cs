@@ -146,5 +146,20 @@ namespace Viam.SalesForce.API.Controllers.Products
                 return BadRequest(ex.Message.ToString());
             }
         }
+
+        [HttpGet]
+        [Route("agency")]
+        public ActionResult<List<AgencyProducts>> getAgencyProducts([FromQuery] string idProduct,  string date,string idLocation)
+        {
+            try
+            {
+                return _productBusiness.getAgencyProducts(idProduct, date,idLocation );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"ProductController - metodo getAgencyProducts API agency, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
+        }
     }
 }
