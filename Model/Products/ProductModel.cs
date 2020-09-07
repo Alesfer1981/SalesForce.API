@@ -11,7 +11,6 @@ namespace Viam.SalesForce.API.Model.Products
         /// <summary>
         /// Branch code
         /// </summary>
-        [Required, StringLength(10), MinLength(5)]
         public string idBranch { get; set; }
         private string ID_BRANCH
         {
