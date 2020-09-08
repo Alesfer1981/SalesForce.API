@@ -219,9 +219,6 @@ namespace Viam.SalesForce.API.Business.Products
             return _envioReadRepository.getKpis(name, idProduct, hour);
         }
 
-         public ActionResult<List<AgencyProducts>> getAgencyProducts(string idProduct, string date, string idLocation)
-        {
-            return _envioReadRepository.getAgencyProducts(idProduct, date,idLocation);
-        }
+
     }
 }

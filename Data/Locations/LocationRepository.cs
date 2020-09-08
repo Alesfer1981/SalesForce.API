@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Viam.SalesForce.API.Helper;
 using Viam.SalesForce.API.Model.Locations;
+using Viam.SalesForce.API.Model.Products;
 
 namespace Viam.SalesForce.API.Data.Locations
 {
@@ -189,6 +190,25 @@ namespace Viam.SalesForce.API.Data.Locations
                                                        p,
                                                        commandType: CommandType.StoredProcedure);
                 return query.ToString();
+            }
+        }
+
+       public ActionResult<List<AgencyProducts>> getAgencyProducts(string idProduct, string date, string idLocation)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+
+                var p = new DynamicParameters();
+
+                p.Add("@IdProduct", idProduct);
+                p.Add("@IdLocation", idLocation);
+				p.Add("@Date", date);
+
+                var query = dbConnection.Query<AgencyProducts>(Helper.Constants.spGetSLDailyTransactions,
+                                                          p,
+                                                          commandType: CommandType.StoredProcedure);
+                return query.AsList();
             }
         }
     }

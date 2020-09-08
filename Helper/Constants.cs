@@ -40,7 +40,7 @@ namespace Viam.SalesForce.API.Helper
 
         internal const string spGetSalesfKpi = "[crm].[spGetSalesfKpi]" ;
 
-        internal const string spGetSLDailyTransactions = "[crm].[spGetSLDailyTransactions]" ;
+        internal const string spGetSLDailyTransactions = "[crm].[spSalesFDailyTransactions]" ;
 
         
 

@@ -10,6 +10,7 @@ using Viam.SalesForce.API.Business.Locations;
 using Viam.SalesForce.API.Helper;
 using Viam.SalesForce.API.Model.Configuration;
 using Viam.SalesForce.API.Model.Locations;
+using Viam.SalesForce.API.Model.Products;
 
 namespace Viam.SalesForce.API.Controllers.Locations
 {
@@ -251,6 +252,21 @@ namespace Viam.SalesForce.API.Controllers.Locations
         public IActionResult EchoPingAPI()
         {
             return Ok(true);
+        }
+
+        [HttpGet]
+        [Route("products")]
+        public ActionResult<List<AgencyProducts>> getAgencyProducts([FromQuery] string idProduct,  string date,string idLocation)
+        {
+            try
+            {
+                return _locationBusiness.getAgencyProducts(idProduct, date,idLocation );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"LocationController - metodo getAgencyProducts API agency, exception: { ex.Message} stack trace : {ex.StackTrace}");
+                return BadRequest(ex.Message.ToString());
+            }
         }
     }
 }

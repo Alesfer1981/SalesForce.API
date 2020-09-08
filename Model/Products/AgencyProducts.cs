@@ -8,14 +8,7 @@ namespace Viam.SalesForce.API.Model.Products
 {
     public class AgencyProducts
     {
-        /// <summary>
-        /// code
-        /// </summary>
-        [Required, StringLength(10), MinLength(3)]
-        public int id { get; set; }  
-        private int ID {
-        get { return id; } set { id = value; }
-        }    
+ 
 
         /// <summary>
         /// Name
@@ -32,19 +25,13 @@ namespace Viam.SalesForce.API.Model.Products
 
         public string payer { get; set; }  
         private string PAYER {
-        get { return payer; } set { payer = value; }
+        get { return payer; } set { payer = value.Trim(); }
         }  
 
         public string country { get; set; }  
         private string COUNTRY {
         get { return country; } set { country = value; }
         }  
-
-        public string user { get; set; }  
-        private string USER {
-        get { return user; } set { user = value; }
-        }  
-
        
         public string date { get; set; }  
         private string DATE {
@@ -73,7 +60,6 @@ namespace Viam.SalesForce.API.Model.Products
         get { return amount; } set { amount = value; }
         }  
 
-
         public string countBudget { get; set; }  
         private string COUNT_BUDGET {
         get { return countBudget; } set { countBudget = value; }
@@ -92,11 +78,6 @@ namespace Viam.SalesForce.API.Model.Products
         public string rebates { get; set; }  
         private string REBATES {
         get { return rebates; } set { rebates = value; }
-        }
-
-        public string monthsAgo { get; set; }  
-        private string MONTHS_AGO {
-        get { return monthsAgo; } set { monthsAgo = value; }
         }
 
         public string viaTasa { get; set; }  
