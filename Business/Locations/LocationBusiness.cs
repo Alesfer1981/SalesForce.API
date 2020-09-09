@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Viam.SalesForce.API.Data.Locations;
 using Viam.SalesForce.API.Model.Configuration;
 using Viam.SalesForce.API.Model.Locations;
+using Viam.SalesForce.API.Model.Products;
 
 namespace Viam.SalesForce.API.Business.Locations
 {
@@ -56,6 +57,11 @@ namespace Viam.SalesForce.API.Business.Locations
         public ActionResult<string> setSalesFId(string idLocation, string idSalesForce)
         {
             return _envioWriteRepository.setSalesFId(idLocation, idSalesForce);
+        }
+
+         public ActionResult<List<AgencyProducts>> getAgencyProducts(string idProduct, string date, string idLocation)
+        {
+            return _envioReadRepository.getAgencyProducts(idProduct, date,idLocation);
         }
 
     }

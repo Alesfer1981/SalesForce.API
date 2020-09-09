@@ -218,5 +218,7 @@ namespace Viam.SalesForce.API.Business.Products
         {
             return _envioReadRepository.getKpis(name, idProduct, hour);
         }
+
+
     }
 }
