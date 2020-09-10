@@ -24,9 +24,9 @@ namespace Viam.SalesForce.API.Business.Locations
             _envioDWRepository = new LocationRepository(configuration.EnvioDW);
         }
 
-        public List<ResumeData> getResumeData(string idlocation, int measure)
+        public List<ResumeData> getResumeData(string idlocation, string idSalesRep)
         {
-            return _envioDWRepository.getResumeData(idlocation, measure);
+            return _envioDWRepository.getResumeData(idlocation, idSalesRep);
         }
 
         public List<LocationModel> getLocations(string idlocation, string synchronize)
@@ -61,7 +61,7 @@ namespace Viam.SalesForce.API.Business.Locations
 
          public ActionResult<List<AgencyProducts>> getAgencyProducts(string idProduct, string date, string idLocation)
         {
-            return _envioReadRepository.getAgencyProducts(idProduct, date,idLocation);
+            return _envioDWRepository.getAgencyProducts(idProduct, date,idLocation);
         }
 
     }
