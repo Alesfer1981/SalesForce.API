@@ -117,7 +117,7 @@ namespace Viam.SalesForce.API.Data.Locations
                 var query = dbConnection.Query<string>(Constants.spUpdateSalesFLocationSynchronize,
                                                        p,
                                                        commandType: CommandType.StoredProcedure);
-                return query.ToString();
+                return query.FirstOrDefault();
             }
         }
 

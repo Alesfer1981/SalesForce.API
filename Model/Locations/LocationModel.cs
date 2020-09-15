@@ -1288,4 +1288,15 @@ namespace Viam.SalesForce.API.Model.Locations
         }
 
     }
+
+    public class LocationSynch
+    {
+        public string message { get; set; }
+        private string Message
+        {
+            get { return message; }
+            set { message = value.Trim(); }
+        }
+
+    }
 }

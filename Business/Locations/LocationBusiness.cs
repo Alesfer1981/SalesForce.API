@@ -41,7 +41,7 @@ namespace Viam.SalesForce.API.Business.Locations
 
         public ActionResult<string> setSynchronized(string idLocationList, string value)
         {
-            return _envioWriteRepository.setSynchronized(idLocationList, value);
+            return _envioDWRepository.setSynchronized(idLocationList, value);
         }
 
         public ActionResult<string> setLocationStatus(string idLocation)
