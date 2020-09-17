@@ -15,10 +15,13 @@ namespace Viam.SalesForce.API.Business.Products
         ProductRepository _envioReadRepository;
         ProductRepository _envioWriteRepository;
 
+        ProductRepository _envioDWRepository;
+
         public ProductBusiness(ConfigurationModel configuration)
         {
             _envioReadRepository = new ProductRepository(configuration.EnvioRead);
             _envioWriteRepository = new ProductRepository(configuration.EnvioWrite);
+            _envioDWRepository = new ProductRepository(configuration.EnvioDW);
         }
 
         public ActionResult<string> setProductStatus(string idbranch, string status, string flag)
@@ -216,7 +219,7 @@ namespace Viam.SalesForce.API.Business.Products
 
         public ActionResult<List<KpisModel>> getKpis(string name, string idProduct, string hour)
         {
-            return _envioReadRepository.getKpis(name, idProduct, hour);
+            return _envioDWRepository.getKpis(name, idProduct, hour); 
         }
 
 
